@@ -4,11 +4,12 @@ import Home from './Home'
 import January from './January'
 import February from './February'
 import March from './March'
+import Drawer from './Drawer'
 
 export default function App() {
   return (
     <>
-      {/* <Drawer /> */}
+      <Drawer />
       <BrowserRouter>
         <Switch>
           <Route exact from="/" render={props => <Home {...props} />} />

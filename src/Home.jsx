@@ -24,7 +24,10 @@ import ToolBar from '@material-ui/core/ToolBar'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 
-
+import { BrowserRouter, Route, Switch } from "react-router-dom"
+import January from './January'
+import February from './February'
+import March from './March'
 
 const useStyles = makeStyles({
   root: {
@@ -74,7 +77,7 @@ const Home = props => {
           <header className="App-header">
             <AppBar color='primary'>
               <ToolBar>
-                <IconButton>
+                <IconButton onClick={() => {console.log('test')}}>
                   <MenuIcon />
                 </IconButton>
                 <Typography variant='h6'>
