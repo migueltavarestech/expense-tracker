@@ -21,19 +21,23 @@ const Drawer = () => {
         }
     ];
 
+    const anchor = false;
+
     return (
-        <MUIDrawer>
-            <List>
-                {itemsList.map((item, index) => {
-                    const {text, onClick} = item;
-                    return (
-                        <ListItem button key={text} onClick={onClick}>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    );
-                })}
-            </List>
-        </MUIDrawer>
+        <React.Fragment>
+            <MUIDrawer>
+                <List>
+                    {itemsList.map((item, index) => {
+                        const {text, onClick} = item;
+                        return (
+                            <ListItem button key={text} onClick={onClick}>
+                                <ListItemText primary={text} />
+                            </ListItem>
+                        );
+                    })}
+                </List>
+            </MUIDrawer>
+        </React.Fragment>
     );
 };
 

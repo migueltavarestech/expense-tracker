@@ -70,14 +70,14 @@ function CheckboxExample() {
   )
 }
 
-const Home = props => {
+const Home = () => {
     return (
         <ThemeProvider theme={theme}>
         <div className="App">
           <header className="App-header">
             <AppBar color='primary'>
               <ToolBar>
-                <IconButton onClick={() => {console.log('test')}}>
+                <IconButton onClick={() => {const anchor = true; console.log(anchor)}}>
                   <MenuIcon />
                 </IconButton>
                 <Typography variant='h6'>
