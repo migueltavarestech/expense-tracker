@@ -34,16 +34,18 @@ const Drawer = () => {
 
     return (
         <React.Fragment>
-            <AppBar color='primary'>
-                <ToolBar>
-                    <IconButton onClick={handleDrawer}>
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant='h6'>
-                        Expenses Tracker
-                    </Typography>
-                </ToolBar>
-            </AppBar>
+            <div class='App'>
+                <AppBar color='primary'>
+                    <ToolBar>
+                        <IconButton onClick={handleDrawer}>
+                            <MenuIcon />
+                        </IconButton>
+                        <Typography variant='h6'>
+                            Expenses Tracker
+                        </Typography>
+                    </ToolBar>
+                </AppBar>
+            </div>
 
         
             <MUIDrawer anchor='left' open={open} onClose={() => setOpen(false)}>
