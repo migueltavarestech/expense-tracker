@@ -1,7 +1,9 @@
 import React from 'react';
 
 const January = () => {
-    return <div>January Page</div>
+    return (
+        <div>This is the January page</div>
+    )
 };
 
 export default January;

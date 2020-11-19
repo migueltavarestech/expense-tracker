@@ -13,7 +13,7 @@ import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/sty
 // import { green, orange } from '@material-ui/core/colors'
 import 'fontsource-roboto';
 
-import Typography from '@material-ui/core/Typography'
+// import Typography from '@material-ui/core/Typography'
 // import Container from '@material-ui/core/Container'
 
 import Paper from '@material-ui/core/Paper'
@@ -23,6 +23,7 @@ import AppBar from '@material-ui/core/AppBar'
 import ToolBar from '@material-ui/core/ToolBar'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
+import Typography from '@material-ui/core/Typography'
 
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import January from './January'
@@ -75,23 +76,14 @@ const Home = () => {
         <ThemeProvider theme={theme}>
         <div className="App">
           <header className="App-header">
-            <AppBar color='primary'>
-              <ToolBar>
-                <IconButton onClick={() => {const anchor = true; console.log(anchor)}}>
-                  <MenuIcon />
-                </IconButton>
-                <Typography variant='h6'>
-                  Expenses Tracker
-                </Typography>
-              </ToolBar>
-            </AppBar>
-  
+
             <Typography variant='h2' component='div'>
               Select the Month
             </Typography>
             <Typography variant='subtitle1'>
               Learn how to use Material UI
             </Typography>
+
             <ButtonStyled />
   
             <Grid container spacing={2} justify='center'>

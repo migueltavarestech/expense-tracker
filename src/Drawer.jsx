@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Drawer as MUIDrawer, List, ListItem, ListItemIcon, ListItemText  } from '@material-ui/core';
+import AppBar from '@material-ui/core/AppBar'
+import ToolBar from '@material-ui/core/ToolBar'
+import IconButton from '@material-ui/core/IconButton'
+import MenuIcon from '@material-ui/icons/Menu'
+import Typography from '@material-ui/core/Typography'
 
 const Drawer = () => {
+
+    const[open, setOpen] = useState(false);
+    const handleDrawer = () => {
+        setOpen(true)
+    };
+
     const itemsList = [
         {
             text: 'Home',
@@ -21,11 +32,21 @@ const Drawer = () => {
         }
     ];
 
-    const anchor = false;
-
     return (
         <React.Fragment>
-            <MUIDrawer>
+            <AppBar color='primary'>
+                <ToolBar>
+                    <IconButton onClick={handleDrawer}>
+                        <MenuIcon />
+                    </IconButton>
+                    <Typography variant='h6'>
+                        Expenses Tracker
+                    </Typography>
+                </ToolBar>
+            </AppBar>
+
+        
+            <MUIDrawer anchor='left' open={open} onClose={() => setOpen(false)}>
                 <List>
                     {itemsList.map((item, index) => {
                         const {text, onClick} = item;
