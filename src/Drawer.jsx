@@ -34,7 +34,7 @@ const Drawer = () => {
 
     return (
         <React.Fragment>
-            <div class='App'>
+            <div className='App'>
                 <AppBar color='primary'>
                     <ToolBar>
                         <IconButton onClick={handleDrawer}>

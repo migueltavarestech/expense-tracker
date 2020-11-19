@@ -10,6 +10,7 @@ export default function App() {
   return (
     <>
       <Drawer />
+      
       <BrowserRouter>
         <Switch>
           <Route exact from="/" render={props => <Home {...props} />} />
