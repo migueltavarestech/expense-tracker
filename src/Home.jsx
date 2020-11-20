@@ -15,6 +15,7 @@ import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { Divider } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
@@ -25,6 +26,12 @@ const useStyles = makeStyles({
     color: 'white',
     padding: '5px 30px'
   }
+})
+
+const blackColor = makeStyles({
+    root: {
+        color: 'black'
+    }
 })
 
 const theme = createMuiTheme({
@@ -40,6 +47,11 @@ function ButtonStyled() {
   const classes = useStyles();
   return <Button className={classes.root}>Test Styles Button</Button>
 }
+
+function DividerStyled() {
+    const classes = useStyles();
+    return <Divider />
+  }
 
 function CheckboxExample() {
   const [checked, setChecked] = React.useState(true)
@@ -105,7 +117,7 @@ const Home = () => {
     const [expanded, setExpanded] = React.useState('panel1');
     const handleChange = (panel) => (event, newExpanded) => {
         setExpanded(newExpanded ? panel : false);
-    };
+};
 
     return (
         <ThemeProvider theme={theme}>
@@ -125,11 +137,22 @@ const Home = () => {
                     <Typography>January</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <Typography>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                        sit amet blandit leo lobortis eget. Lorem ipsum dolor sit amet, consectetur adipiscing
-                        elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
-                    </Typography>
+                        <Grid container spacing={2} justify='center'>
+                            <Grid item alignItems='flex-start'>
+                                <div className='align-left'>Income</div>
+                                <div className='align-left'>Expenses</div>
+                                <div className='align-left'>Balance</div>
+                            </Grid>
+                            <Grid item>
+                                <div className='align-right'>1500€</div>
+                                <div className='align-right'>900€</div>
+                                <div className='align-right'>600€</div>
+                            </Grid>
+                            <DividerStyled />
+                            <Grid item xs={12}>
+                                <div>More Info +</div>
+                            </Grid>
+                        </Grid>
                 </AccordionDetails>
             </Accordion>
             <Accordion square expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
@@ -173,29 +196,8 @@ const Home = () => {
 
             <ButtonStyled />
   
-            <Grid container spacing={2} justify='center'>
-              <Grid item>
-                Month
-                <div>January</div>
-                <div>February</div>
-                <div>March</div>
-                <div>April</div>
-                <div>May</div>
-                <div>June</div>
-                <div>July</div>
-                <div>August</div>
-                <div>September</div>
-                <div>October</div>
-                <div>November</div>
-                <div>December</div>
-              </Grid>
-              <Grid item>
-                Outcome
-                <div>Outcome 1</div>
-              </Grid>
-            </Grid>
-  
             <CheckboxExample />
+
             <ButtonGroup variant='contained' color='primary'>
               <Button 
                 startIcon={<SaveIcon />}>

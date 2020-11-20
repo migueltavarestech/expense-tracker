@@ -49,3 +49,15 @@ input {
 .bottom-40 {
   margin-bottom: 40px !important;
 }
+
+.align-center {
+  text-align: center !important;
+}
+
+.align-left {
+  text-align: left !important;
+}
+
+.align-right {
+  text-align: right !important;
+}
