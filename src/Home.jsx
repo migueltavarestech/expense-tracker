@@ -15,7 +15,6 @@ import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { Divider } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
@@ -47,11 +46,6 @@ function ButtonStyled() {
   const classes = useStyles();
   return <Button className={classes.root}>Test Styles Button</Button>
 }
-
-function DividerStyled() {
-    const classes = useStyles();
-    return <Divider />
-  }
 
 function CheckboxExample() {
   const [checked, setChecked] = React.useState(true)
@@ -148,9 +142,16 @@ const Home = () => {
                                 <div className='align-right'>900€</div>
                                 <div className='align-right'>600€</div>
                             </Grid>
-                            <DividerStyled />
-                            <Grid item xs={12}>
-                                <div>More Info +</div>
+                            <Grid container xs={12}>
+                                <Grid item xs={4}>
+                                    <div>Add Income +</div>
+                                </Grid>
+                                <Grid item xs={4}>
+                                    <div>Add Expense -</div>
+                                </Grid>
+                                <Grid item xs={4}>
+                                    <div>Full Info</div>
+                                </Grid>
                             </Grid>
                         </Grid>
                 </AccordionDetails>
