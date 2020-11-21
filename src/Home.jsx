@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ButtonGroup from '@material-ui/core/ButtonGroup'
+import { ButtonGroup, TextField } from '@material-ui/core'
 import Button from '@material-ui/core/Button'
 import SaveIcon from '@material-ui/icons/Save'
 import DeleteIcon from '@material-ui/icons/Delete'
@@ -146,14 +146,20 @@ const Home = () => {
                             </Grid>
                             <Grid container xs={12}>
                                 <Grid item xs={4}>
-                                    <div>Add Income +</div>
                                     <Popup 
                                     openPopup={openPopup} 
                                     setOpenPopup={setOpenPopup}
                                     title = 'Add Income'
-                                    >Test
+                                    >
+                                        <form>
+                                        <TextField 
+                                        autoFocus id='incomeAmount' 
+                                        label='Income Amount €' 
+                                        variant='outlined'
+                                        margin='dense'/>
+                                        </form>
                                     </Popup>
-                                    <Button onClick={() => setOpenPopup(true)}>Test</Button>
+                                    <Button onClick={() => setOpenPopup(true)}>Add Income +</Button>
                                 </Grid>
                                 <Grid item xs={4}>
                                     <div>Add Expense -</div>
