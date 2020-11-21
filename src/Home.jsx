@@ -15,6 +15,7 @@ import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Popup from './components/Popup';
 
 const useStyles = makeStyles({
   root: {
@@ -112,6 +113,7 @@ const Home = () => {
     const handleChange = (panel) => (event, newExpanded) => {
         setExpanded(newExpanded ? panel : false);
 };
+    const [openPopup, setOpenPopup] = React.useState(false);
 
     return (
         <ThemeProvider theme={theme}>
@@ -145,6 +147,8 @@ const Home = () => {
                             <Grid container xs={12}>
                                 <Grid item xs={4}>
                                     <div>Add Income +</div>
+                                    <Popup openPopup={openPopup} setOpenPopup={setOpenPopup}></Popup>
+                                    <Button onClick={() => setOpenPopup(true)}>Test</Button>
                                 </Grid>
                                 <Grid item xs={4}>
                                     <div>Add Expense -</div>
