@@ -147,7 +147,12 @@ const Home = () => {
                             <Grid container xs={12}>
                                 <Grid item xs={4}>
                                     <div>Add Income +</div>
-                                    <Popup openPopup={openPopup} setOpenPopup={setOpenPopup}></Popup>
+                                    <Popup 
+                                    openPopup={openPopup} 
+                                    setOpenPopup={setOpenPopup}
+                                    title = 'Add Income'
+                                    >Test
+                                    </Popup>
                                     <Button onClick={() => setOpenPopup(true)}>Test</Button>
                                 </Grid>
                                 <Grid item xs={4}>

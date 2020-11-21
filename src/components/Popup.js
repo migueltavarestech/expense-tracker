@@ -1,15 +1,31 @@
 import React from 'react';
-import { Dialog, DialogTitle, DialogContent } from '@material-ui/core';
+import { Dialog, DialogTitle, DialogContent, Typography, Button } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles'
+
+const useStyles = makeStyles(theme => ({
+    dialogTitle:{
+        paddingRight: '0px'
+    }
+}));
 
 export default function Popup(props) {
     const { title, children, openPopup, setOpenPopup } = props;
+    const classes = useStyles();
     return (
-        <Dialog open={openPopup}>
-            <DialogTitle>
-                <div>Title Goes Here</div>
+        <Dialog open={openPopup} maxWidth='md'>
+            <DialogTitle className={classes.dialogTitle}>
+                <div style={{ display: 'flex' }}>
+                    <Typography variant='h6' component='div' style={{ flexGrow: 1 }}>
+                        {title}
+                    </Typography>
+                    <Button 
+                    color='secondary'
+                    onClick={() => {setOpenPopup(false)}}
+                    >X</Button>
+                </div>
             </DialogTitle>
-            <DialogContent>
-                <div>Content Goes Here.</div>
+            <DialogContent dividers>
+                {children}
             </DialogContent>
         </Dialog>
     );
