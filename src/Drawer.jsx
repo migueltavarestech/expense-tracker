@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Drawer as MUIDrawer, List, ListItem, ListItemIcon, ListItemText  } from '@material-ui/core';
+import { Drawer as MUIDrawer, List, ListItem, ListItemText  } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar'
 import ToolBar from '@material-ui/core/ToolBar'
 import IconButton from '@material-ui/core/IconButton'

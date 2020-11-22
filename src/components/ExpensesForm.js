@@ -45,7 +45,7 @@ export default function ExpensesForm() {
             <Grid container>
                 <Grid item xs={6}>
                     <Controls.Input
-                    name = 'Amount'
+                    name = 'amount'
                     label = 'Amount €'
                     value = {values.amount}
                     onChange = {handleInputChange}/>
