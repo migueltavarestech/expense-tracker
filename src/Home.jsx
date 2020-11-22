@@ -16,6 +16,7 @@ import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Popup from './components/Popup';
+import Expenses from './components/Expenses';
 
 const useStyles = makeStyles({
   root: {
@@ -23,15 +24,8 @@ const useStyles = makeStyles({
     border: 0,
     marginBottom: 15,
     borderRadius: 15,
-    color: 'white',
     padding: '5px 30px'
   }
-})
-
-const blackColor = makeStyles({
-    root: {
-        color: 'black'
-    }
 })
 
 const theme = createMuiTheme({
@@ -108,6 +102,15 @@ root: {
 },
 }))(MuiAccordionDetails);
 
+const handleChange = expense => ({ target: {value} }) => {
+    this.setState({
+        form: {
+            ...this.state.form,
+            [expense]: value
+        }
+    })
+}
+
 const Home = () => {
     const [expanded, setExpanded] = React.useState('panel1');
     const handleChange = (panel) => (event, newExpanded) => {
@@ -151,13 +154,14 @@ const Home = () => {
                                     setOpenPopup={setOpenPopup}
                                     title = 'Add Income'
                                     >
-                                        <form>
+                                        {/* <form>
                                         <TextField 
-                                        autoFocus id='incomeAmount' 
+                                        autoFocus 
                                         label='Income Amount €' 
                                         variant='outlined'
                                         margin='dense'/>
-                                        </form>
+                                        </form> */}
+                                        <Expenses />
                                     </Popup>
                                     <Button onClick={() => setOpenPopup(true)}>Add Income +</Button>
                                 </Grid>
