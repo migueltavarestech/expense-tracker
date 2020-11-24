@@ -34,21 +34,45 @@ const months = [
 
 export default function ExpensesForm() {
 
+    const validate = (fieldValues = values) => {
+        let temp = {...errors}
+        if('amount' in fieldValues)
+            temp.amount = fieldValues.amount?'':'This field is required.'
+        if('month' in fieldValues)
+            temp.month = fieldValues.month?'':'This field is required.'
+        setErrors({
+            ...temp
+        })
+
+        if (fieldValues == values)
+            return Object.values(temp).every(x => x == '')
+    };
+
     const {
         values,
         setValues,
-        handleInputChange
-    } = useForm(initialFValues);
+        errors,
+        setErrors,
+        handleInputChange,
+        resetForm
+    } = useForm(initialFValues, true, validate);
+
+    const handleSubmit = e => {
+        e.preventDefault()
+        if (validate())
+            window.alert('test')
+    };
 
     return (
-        <Form>
+        <Form onSubmit={handleSubmit}>
             <Grid container>
                 <Grid item xs={6}>
                     <Controls.Input
                     name = 'amount'
                     label = 'Amount €'
                     value = {values.amount}
-                    onChange = {handleInputChange}/>
+                    onChange = {handleInputChange}
+                    error={errors.amount}/>
                 </Grid>
                 <Grid item xs={6}>
                     <Controls.Input 
@@ -63,7 +87,8 @@ export default function ExpensesForm() {
                     label='Month'
                     value={values.month}
                     onChange={handleInputChange}
-                    options={months}/>
+                    options={months}
+                    error={errors.month}/>
                 </Grid>
                 <Grid item xs={6}>
                     <Controls.RadioGroup 
@@ -80,10 +105,12 @@ export default function ExpensesForm() {
                     value={values.date}
                     onChange={handleInputChange}/>
                 </Grid>
-                <div>
-                    <Controls.CustomButton type='submit' text='Submit' />
-                    <Controls.CustomButton type='reset' text='Reset' color='default'/>
-                </div>
+                <Grid container justify='flex-end'>
+                    <div>
+                        <Controls.CustomButton type='submit' text='SUBMIT' />
+                        <Controls.CustomButton type='reset' text='RESET' color='default' onClick={resetForm}/>
+                    </div>
+                </Grid>
             </Grid>
         </Form>
     )

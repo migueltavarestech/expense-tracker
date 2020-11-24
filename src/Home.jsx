@@ -154,13 +154,6 @@ const Home = () => {
                                     setOpenPopup={setOpenPopup}
                                     title = 'Add Income'
                                     >
-                                        {/* <form>
-                                        <TextField 
-                                        autoFocus 
-                                        label='Income Amount €' 
-                                        variant='outlined'
-                                        margin='dense'/>
-                                        </form> */}
                                         <Expenses />
                                     </Popup>
                                     <Button onClick={() => setOpenPopup(true)}>Add Income +</Button>
