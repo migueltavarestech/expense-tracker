@@ -132,7 +132,7 @@ export default function ExpensesForm() {
                     value={values.date}
                     onChange={handleInputChange}/>
                 </Grid>
-                <Grid container justify='flex-end'>
+                <Grid container justify='flex-end' style={{'margin-top': "15px"}}>
                     <div>
                         <Controls.CustomButton type='submit' text='SUBMIT' />
                         <Controls.CustomButton type='reset' text='RESET' color='default' onClick={resetForm}/>

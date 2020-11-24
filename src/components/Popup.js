@@ -19,8 +19,10 @@ export default function Popup(props) {
                         {title}
                     </Typography>
                     <Button 
+                    variant='outlined'
                     color='secondary'
                     onClick={() => {setOpenPopup(false)}}
+                    style={{ 'margin-right': '25px' }}
                     >X</Button>
                 </div>
             </DialogTitle>
