@@ -80,6 +80,10 @@ export default function ExpensesForm() {
                     value={values.date}
                     onChange={handleInputChange}/>
                 </Grid>
+                <div>
+                    <Controls.CustomButton type='submit' text='Submit' />
+                    <Controls.CustomButton type='reset' text='Reset' color='default'/>
+                </div>
             </Grid>
         </Form>
     )
