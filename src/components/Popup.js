@@ -12,7 +12,7 @@ export default function Popup(props) {
     const { title, children, openPopup, setOpenPopup } = props;
     const classes = useStyles();
     return (
-        <Dialog open={openPopup} maxWidth='md'>
+        <Dialog open={openPopup}>
             <DialogTitle className={classes.dialogTitle}>
                 <div style={{ display: 'flex' }}>
                     <Typography variant='h6' component='div' style={{ flexGrow: 1 }}>

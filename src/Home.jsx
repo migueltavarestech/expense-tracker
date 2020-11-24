@@ -152,8 +152,7 @@ const Home = () => {
                                     <Popup 
                                     openPopup={openPopup} 
                                     setOpenPopup={setOpenPopup}
-                                    title = 'Add Income'
-                                    >
+                                    title = 'Add Income'>
                                         <Expenses />
                                     </Popup>
                                     <Button onClick={() => setOpenPopup(true)}>Add Income +</Button>
