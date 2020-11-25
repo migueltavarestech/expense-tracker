@@ -57,7 +57,7 @@ const getAllRecords = () => {
     return JSON.parse(localStorage.getItem(KEYS.records));
 };
 
-export default function ExpensesForm() {
+export default function RecordForm() {
 
     const validate = (fieldValues = values) => {
         let temp = {...errors}

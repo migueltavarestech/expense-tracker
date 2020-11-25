@@ -16,7 +16,7 @@ import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Popup from './components/Popup';
-import Expenses from './components/Expenses';
+import Expenses from './components/Records';
 
 const useStyles = makeStyles({
   root: {
