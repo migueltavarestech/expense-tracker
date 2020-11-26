@@ -16,11 +16,10 @@ import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Popup from './components/Popup';
-import Expenses from './components/Records';
-import TotalIncome from './components/TotalIncome'
-import RecordForm from './components/RecordForm'
-import TotalExpenses from './components/TotalExpenses'
-import TotalBalance from './components/TotalBalance'
+import TotalIncome from './components/TotalIncome';
+import RecordForm from './components/RecordForm';
+import TotalExpenses from './components/TotalExpenses';
+import TotalBalance from './components/TotalBalance';
 
 const useStyles = makeStyles({
   root: {
@@ -123,7 +122,8 @@ const Home = () => {
     const handleChange = (panel) => (event, newExpanded) => {
         setExpanded(newExpanded ? panel : false);
 };
-    const [openPopup, setOpenPopup] = React.useState(false);
+    const [openIncomePopup, setIncomePopup] = React.useState(false);
+    const [openExpensesPopup, setExpensesPopup] = React.useState(false);
     
 
     return (
@@ -158,21 +158,21 @@ const Home = () => {
                             <Grid container xs={12}>
                                 <Grid item xs={4}>
                                     <Popup 
-                                    openPopup={openPopup} 
-                                    setOpenPopup={setOpenPopup}
+                                    openPopup={openIncomePopup} 
+                                    setOpenPopup={setIncomePopup}
                                     title = 'Add Income'>
-                                        <RecordForm type='income'/>
+                                        <RecordForm type='income' />
                                     </Popup>
-                                    <Button onClick={() => setOpenPopup(true)}>Add Income +</Button>
+                                    <Button onClick={() => setIncomePopup(true)}>Add Income +</Button>
                                 </Grid>
                                 <Grid item xs={4}>
                                     <Popup 
-                                        openPopup={openPopup} 
-                                        setOpenPopup={setOpenPopup}
+                                        openPopup={openExpensesPopup} 
+                                        setOpenPopup={setExpensesPopup}
                                         title = 'Add Expense'>
-                                            <RecordForm type='expense'/>
+                                            <RecordForm type='expense' />
                                         </Popup>
-                                        <Button onClick={() => setOpenPopup(true)}>Add Expense -</Button>
+                                        <Button onClick={() => setExpensesPopup(true)}>Add Expense -</Button>
                                     </Grid>
                                 <Grid item xs={4}>
                                     <div>Full Info</div>

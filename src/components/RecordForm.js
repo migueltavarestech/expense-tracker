@@ -56,7 +56,6 @@ export default function RecordForm(props) {
 
     const { type } = props;
     
-    
     const validate = (fieldValues = values) => {
         let temp = {...errors}
 
@@ -141,7 +140,7 @@ export default function RecordForm(props) {
                 </Grid>
             </Form>
         )
-    } else {
+    } else if (type == 'expense') {
         return (
             <Form onSubmit={handleSubmit}>
                 <Grid container>
