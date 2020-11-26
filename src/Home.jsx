@@ -17,6 +17,7 @@ import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Popup from './components/Popup';
 import Expenses from './components/Records';
+import GetAllRecords from './components/GetAllRecords'
 
 const useStyles = makeStyles({
   root: {
@@ -111,12 +112,16 @@ const handleChange = expense => ({ target: {value} }) => {
     })
 }
 
+
+
+
 const Home = () => {
     const [expanded, setExpanded] = React.useState('panel1');
     const handleChange = (panel) => (event, newExpanded) => {
         setExpanded(newExpanded ? panel : false);
 };
     const [openPopup, setOpenPopup] = React.useState(false);
+    
 
     return (
         <ThemeProvider theme={theme}>
@@ -143,7 +148,7 @@ const Home = () => {
                                 <div className='align-left'>Balance</div>
                             </Grid>
                             <Grid item>
-                                <div className='align-right'>1500€</div>
+                                <GetAllRecords />
                                 <div className='align-right'>900€</div>
                                 <div className='align-right'>600€</div>
                             </Grid>
