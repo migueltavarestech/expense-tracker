@@ -10,8 +10,6 @@ export default function TotalExpenses() {
     records.forEach(item => {
         totalExpenses += Number(item.expense);
     });
-    
-    console.log(totalExpenses);
 
     return (
         <div className='align-right'>{totalExpenses}€</div>

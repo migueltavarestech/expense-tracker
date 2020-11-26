@@ -20,6 +20,7 @@ import Expenses from './components/Records';
 import TotalIncome from './components/TotalIncome'
 import RecordForm from './components/RecordForm'
 import TotalExpenses from './components/TotalExpenses'
+import TotalBalance from './components/TotalBalance'
 
 const useStyles = makeStyles({
   root: {
@@ -152,7 +153,7 @@ const Home = () => {
                             <Grid item>
                                 <TotalIncome />
                                 <TotalExpenses />
-                                <div className='align-right'>600€</div>
+                                <TotalBalance />
                             </Grid>
                             <Grid container xs={12}>
                                 <Grid item xs={4}>
