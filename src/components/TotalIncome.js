@@ -1,19 +1,19 @@
 import React from 'react';
 
-export default function GetAllRecords() {
+export default function TotalIncome() {
     if (localStorage.getItem('records') == null)
         localStorage.setItem('records', JSON.stringify([]))
 
     const records = JSON.parse(localStorage.getItem('records'))
 
-    var total = 0;
+    var totalIncome = 0;
     records.forEach(item => {
-        total += Number(item.amount);
+        totalIncome += Number(item.income);
     });
     
-    console.log(total);
+    console.log(totalIncome);
 
     return (
-        <div className='align-right'>{total}€</div>
+        <div className='align-right'>{totalIncome}€</div>
     )
 }

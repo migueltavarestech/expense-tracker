@@ -3,17 +3,12 @@ import { Grid } from '@material-ui/core';
 import { useForm, Form } from './useForm';
 import Controls from './controls/Controls';
 
-const typeItems = [
-    {id:'income',title:'Income'},
-    {id:'expense',title:'Expense'}
-];
-
 const initialFValues = {
     id: 0,
-    amount: '',
+    income: '',
+    expense: '',
     description: '',
     month: '',
-    type: '',
     date: new Date()
 };
 
@@ -57,14 +52,26 @@ const getAllRecords = () => {
     return JSON.parse(localStorage.getItem(KEYS.records));
 };
 
-export default function RecordForm() {
+export default function RecordForm(props) {
 
+    const { type } = props;
+    
+    
     const validate = (fieldValues = values) => {
         let temp = {...errors}
-        if('amount' in fieldValues)
-            temp.amount = fieldValues.amount?'':'This field is required.'
-        if('month' in fieldValues)
-            temp.month = fieldValues.month?'':'This field is required.'
+
+        if (type === 'income') {
+            if('income' in fieldValues)
+                temp.income = fieldValues.income?'':'This field is required.'
+            if('month' in fieldValues)
+                temp.month = fieldValues.month?'':'This field is required.'
+        } else {
+            if('expense' in fieldValues)
+                temp.expense = fieldValues.expense?'':'This field is required.'
+            if('month' in fieldValues)
+                temp.month = fieldValues.month?'':'This field is required.'        
+        }
+
         setErrors({
             ...temp
         })
@@ -90,55 +97,94 @@ export default function RecordForm() {
         }
     };
 
-    return (
-        <Form onSubmit={handleSubmit}>
-            <Grid container>
-                <Grid item xs={12}>
-                    <Controls.Input
-                    name = 'amount'
-                    label = 'Amount €'
-                    value = {values.amount}
-                    onChange = {handleInputChange}
-                    error={errors.amount}/>
+    if (type === 'income') {
+        return (
+            <Form onSubmit={handleSubmit}>
+                <Grid container>
+                    <Grid item xs={12}>
+                        <Controls.Input
+                        name = 'income'
+                        label = 'Income Amount €'
+                        value = {values.income}
+                        onChange = {handleInputChange}
+                        error={errors.income}/>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Controls.Input 
+                        name = 'description'
+                        label = 'Description'
+                        value={values.description}
+                        onChange={handleInputChange}/>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Controls.Select 
+                        name='month'
+                        label='Month'
+                        value={values.month}
+                        onChange={handleInputChange}
+                        options={months}
+                        error={errors.month}/>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Controls.DatePicker 
+                        name='date'
+                        label='Date'
+                        value={values.date}
+                        onChange={handleInputChange}/>
+                    </Grid>
+                    <Grid container justify='flex-end' style={{'margin-top': "15px"}}>
+                        <div>
+                            <Controls.CustomButton type='submit' text='SUBMIT' />
+                            <Controls.CustomButton type='reset' text='RESET' color='default' onClick={resetForm}/>
+                        </div>
+                    </Grid>
                 </Grid>
-                <Grid item xs={12}>
-                    <Controls.Input 
-                    name = 'description'
-                    label = 'Description'
-                    value={values.description}
-                    onChange={handleInputChange}/>
+            </Form>
+        )
+    } else {
+        return (
+            <Form onSubmit={handleSubmit}>
+                <Grid container>
+                    <Grid item xs={12}>
+                        <Controls.Input
+                        name = 'expense'
+                        label = 'Expense Amount €'
+                        value = {values.expense}
+                        onChange = {handleInputChange}
+                        error={errors.expense}/>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Controls.Input 
+                        name = 'description'
+                        label = 'Description'
+                        value={values.description}
+                        onChange={handleInputChange}/>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Controls.Select 
+                        name='month'
+                        label='Month'
+                        value={values.month}
+                        onChange={handleInputChange}
+                        options={months}
+                        error={errors.month}/>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Controls.DatePicker 
+                        name='date'
+                        label='Date'
+                        value={values.date}
+                        onChange={handleInputChange}/>
+                    </Grid>
+                    <Grid container justify='flex-end' style={{'margin-top': "15px"}}>
+                        <div>
+                            <Controls.CustomButton type='submit' text='SUBMIT' />
+                            <Controls.CustomButton type='reset' text='RESET' color='default' onClick={resetForm}/>
+                        </div>
+                    </Grid>
                 </Grid>
-                <Grid item xs={12}>
-                    <Controls.Select 
-                    name='month'
-                    label='Month'
-                    value={values.month}
-                    onChange={handleInputChange}
-                    options={months}
-                    error={errors.month}/>
-                </Grid>
-                {/* <Grid item xs={6}>
-                    <Controls.RadioGroup 
-                    name='type'
-                    label='Type'
-                    value={values.type}
-                    onChange={handleInputChange}
-                    items={typeItems}/>
-                </Grid> */}
-                <Grid item xs={12}>
-                    <Controls.DatePicker 
-                    name='date'
-                    label='Date'
-                    value={values.date}
-                    onChange={handleInputChange}/>
-                </Grid>
-                <Grid container justify='flex-end' style={{'margin-top': "15px"}}>
-                    <div>
-                        <Controls.CustomButton type='submit' text='SUBMIT' />
-                        <Controls.CustomButton type='reset' text='RESET' color='default' onClick={resetForm}/>
-                    </div>
-                </Grid>
-            </Grid>
-        </Form>
-    )
+            </Form>
+        )   
+    }
+
 }
