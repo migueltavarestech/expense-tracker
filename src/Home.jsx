@@ -20,6 +20,7 @@ import TotalIncome from './components/TotalIncome';
 import RecordForm from './components/RecordForm';
 import TotalExpenses from './components/TotalExpenses';
 import TotalBalance from './components/TotalBalance';
+import PieChart from './components/PieChart';
 
 const useStyles = makeStyles({
   root: {
@@ -74,6 +75,7 @@ const Accordion = withStyles({
       },
       '&$expanded': {
         margin: 'auto',
+        minHeight: '35vh',
       },
     },
     expanded: {},
@@ -93,7 +95,7 @@ const AccordionSummary = withStyles({
     },
     content: {
       '&$expanded': {
-        margin: '12px 0',
+        margin: 'auto',
       },
     },
     expanded: {},
@@ -114,14 +116,10 @@ const handleChange = expense => ({ target: {value} }) => {
     })
 }
 
-
-
-
 const Home = () => {
     const [expanded, setExpanded] = React.useState('panel1');
     const handleChange = (panel) => (event, newExpanded) => {
-        setExpanded(newExpanded ? panel : false);
-};
+        setExpanded(newExpanded ? panel : false);};
     const [openIncomePopup, setIncomePopup] = React.useState(false);
     const [openExpensesPopup, setExpensesPopup] = React.useState(false);
     
@@ -135,6 +133,8 @@ const Home = () => {
               Select the Month
             </Typography>
 
+            <PieChart month={'1'}/>
+            
             <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                 <AccordionSummary 
                 aria-controls="panel1d-content" 
@@ -143,6 +143,12 @@ const Home = () => {
                 />}>
                     <Typography>January</Typography>
                 </AccordionSummary>
+                <div style={{
+                  position: 'absolute',
+                  left: '50%',
+                  top: '50%',
+                  transform: 'translate(-50%, -50%)'
+                }}>
                 <AccordionDetails>
                         <Grid container spacing={2} justify='center'>
                             <Grid item alignItems='flex-start'>
@@ -155,32 +161,40 @@ const Home = () => {
                                 <TotalExpenses />
                                 <TotalBalance />
                             </Grid>
+                            <div style={{
+                              position: 'absolute',
+                              bottom: '0%',
+                              transform: 'translate(-0%, 150%)'
+                            }}>
                             <Grid container xs={12}>
                                 <Grid item xs={4}>
                                     <Popup 
-                                    openPopup={openIncomePopup} 
-                                    setOpenPopup={setIncomePopup}
-                                    title = 'Add Income'>
-                                        <RecordForm type='income' />
+                                      openPopup={openIncomePopup} 
+                                      setOpenPopup={setIncomePopup}
+                                      title = 'Add Income'>
+                                          <RecordForm type='income' />
                                     </Popup>
                                     <Button onClick={() => setIncomePopup(true)}>Add Income +</Button>
                                 </Grid>
                                 <Grid item xs={4}>
-                                    <Popup 
-                                        openPopup={openExpensesPopup} 
-                                        setOpenPopup={setExpensesPopup}
-                                        title = 'Add Expense'>
-                                            <RecordForm type='expense' />
-                                        </Popup>
-                                        <Button onClick={() => setExpensesPopup(true)}>Add Expense -</Button>
-                                    </Grid>
+                                  <Popup 
+                                    openPopup={openExpensesPopup} 
+                                    setOpenPopup={setExpensesPopup}
+                                    title = 'Add Expense'>
+                                        <RecordForm type='expense' />
+                                  </Popup>
+                                  <Button onClick={() => setExpensesPopup(true)}>Add Expense -</Button>
+                                </Grid>
                                 <Grid item xs={4}>
-                                    <div>Full Info</div>
+                                  <Button onClick={() => setExpensesPopup(true)}>Full Info</Button>
                                 </Grid>
                             </Grid>
+                            </div>
                         </Grid>
                 </AccordionDetails>
+                </div>
             </Accordion>
+
             <Accordion square expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
                 <AccordionSummary 
                 aria-controls="panel1d-content" 
@@ -213,8 +227,6 @@ const Home = () => {
                     </Typography>
                 </AccordionDetails>
             </Accordion>
-
-
 
             <Typography variant='subtitle1'>
               Learn how to use Material UI
