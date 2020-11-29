@@ -20,7 +20,7 @@ import TotalIncome from './components/TotalIncome';
 import RecordForm from './components/RecordForm';
 import TotalExpenses from './components/TotalExpenses';
 import TotalBalance from './components/TotalBalance';
-import PieChart from './components/PieChart';
+import { January, February } from './components/PieChart'
 
 const useStyles = makeStyles({
   root: {
@@ -133,7 +133,44 @@ const Home = () => {
               Select the Month
             </Typography>
 
-            <PieChart month={'1'}/>
+            <Grid container>
+              <Grid item>
+                <January />
+              </Grid>
+              <Grid item>
+                <February />
+              </Grid>
+              <Grid item>
+                
+              </Grid>
+              <Grid item>
+                
+              </Grid>
+              <Grid item>
+                
+              </Grid>
+              <Grid item>
+                
+              </Grid>
+              <Grid item>
+                
+              </Grid>
+              <Grid item>
+                
+              </Grid>
+              <Grid item>
+                
+              </Grid>
+              <Grid item>
+                
+              </Grid>
+              <Grid item>
+                
+              </Grid>
+              <Grid item>
+                
+              </Grid>
+            </Grid>
             
             <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                 <AccordionSummary 
@@ -151,7 +188,7 @@ const Home = () => {
                 }}>
                 <AccordionDetails>
                         <Grid container spacing={2} justify='center'>
-                            <Grid item alignItems='flex-start'>
+                            <Grid item>
                                 <div className='align-left'>Income</div>
                                 <div className='align-left'>Expenses</div>
                                 <div className='align-left'>Balance</div>
@@ -166,7 +203,7 @@ const Home = () => {
                               bottom: '0%',
                               transform: 'translate(-0%, 150%)'
                             }}>
-                            <Grid container xs={12}>
+                            <Grid container>
                                 <Grid item xs={4}>
                                     <Popup 
                                       openPopup={openIncomePopup} 

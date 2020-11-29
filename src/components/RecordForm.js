@@ -32,11 +32,14 @@ const KEYS = {
     recordId: 'recordId'
 }
 
+
+
 const insertRecord = (data) => {
     let records = getAllRecords();
     data['id'] = generateRecordId();
     records.push(data);
     localStorage.setItem(KEYS.records, JSON.stringify(records));
+    window.addEventListener('storage',e => console.log(e))
 };
 
 const generateRecordId = () => {
@@ -55,6 +58,7 @@ const getAllRecords = () => {
 export default function RecordForm(props) {
 
     const { type } = props;
+    
     
     const validate = (fieldValues = values) => {
         let temp = {...errors}
@@ -88,12 +92,18 @@ export default function RecordForm(props) {
         resetForm
     } = useForm(initialFValues, true, validate);
 
+    // const [inputRecord, setInputRecord] = React.useState([]);
+
     const handleSubmit = e => {
+        // const newInput = values;
         e.preventDefault()
         if (validate()){
             insertRecord(values);
             resetForm();
         }
+        window.location.reload(false);
+        // console.log(newInput);
+        // setInputRecord(inputRecord => [...inputRecord, newInput]);
     };
 
     if (type === 'income') {
@@ -131,7 +141,7 @@ export default function RecordForm(props) {
                         value={values.date}
                         onChange={handleInputChange}/>
                     </Grid>
-                    <Grid container justify='flex-end' style={{'margin-top': "15px"}}>
+                    <Grid container justify='flex-end' style={{marginTop: "15px"}}>
                         <div>
                             <Controls.CustomButton type='submit' text='SUBMIT' />
                             <Controls.CustomButton type='reset' text='RESET' color='default' onClick={resetForm}/>
@@ -175,7 +185,7 @@ export default function RecordForm(props) {
                         value={values.date}
                         onChange={handleInputChange}/>
                     </Grid>
-                    <Grid container justify='flex-end' style={{'margin-top': "15px"}}>
+                    <Grid container justify='flex-end' style={{marginTop: "15px"}}>
                         <div>
                             <Controls.CustomButton type='submit' text='SUBMIT' />
                             <Controls.CustomButton type='reset' text='RESET' color='default' onClick={resetForm}/>
