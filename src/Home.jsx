@@ -127,7 +127,7 @@ const Home = () => {
     return (
         <ThemeProvider theme={theme}>
         <div className="App">
-          <header className="App-header">
+          <body className="Body">
 
           <Typography variant='h2' component='div' className='top-40 bottom-40'>
               Add Income/Expense
@@ -193,7 +193,7 @@ const Home = () => {
               </Grid>
             </Grid>
             
-            {/* <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+            <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                 <AccordionSummary 
                 aria-controls="panel1d-content" 
                 id="panel1d-header" 
@@ -294,18 +294,8 @@ const Home = () => {
   
             <CheckboxExample />
 
-            <ButtonGroup variant='contained' color='primary'>
-              <Button 
-                startIcon={<SaveIcon />}>
-                Save
-              </Button>
-              <Button 
-                startIcon={<DeleteIcon />}>
-                Discard
-              </Button>
-            </ButtonGroup>
-            <img src={logo} className="App-logo" alt="logo" /> */}
-          </header>
+            <img src={logo} className="App-logo" alt="logo" />
+          </body>
         </div>
       </ThemeProvider>
     )
