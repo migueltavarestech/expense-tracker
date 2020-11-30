@@ -3,8 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import { ButtonGroup } from '@material-ui/core'
 import Button from '@material-ui/core/Button'
-import SaveIcon from '@material-ui/icons/Save'
-import DeleteIcon from '@material-ui/icons/Delete'
+import AddIcon from '@material-ui/icons/Add'
+import RemoveIcon from '@material-ui/icons/Remove'
 import Checkbox from '@material-ui/core/Checkbox'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import { makeStyles, ThemeProvider, createMuiTheme, withStyles } from '@material-ui/core/styles'
@@ -20,7 +20,7 @@ import TotalIncome from './components/TotalIncome';
 import RecordForm from './components/RecordForm';
 import TotalExpenses from './components/TotalExpenses';
 import TotalBalance from './components/TotalBalance';
-import { January, February } from './components/PieChart'
+import { January, February, March, April, May, June, July, August, September, October, November, December } from './components/PieChart'
 
 const useStyles = makeStyles({
   root: {
@@ -129,50 +129,71 @@ const Home = () => {
         <div className="App">
           <header className="App-header">
 
+          <Typography variant='h2' component='div' className='top-40 bottom-40'>
+              Add Income/Expense
+            </Typography>
+
+            <ButtonGroup variant='contained' color='primary'>
+              <Popup 
+                openPopup={openIncomePopup} 
+                setOpenPopup={setIncomePopup}
+                title = 'Add Income'>
+                    <RecordForm type='income' />
+              </Popup>
+              <Button onClick={() => setIncomePopup(true)} startIcon={<AddIcon />}>Add Income</Button>
+              <Popup 
+                openPopup={openExpensesPopup} 
+                setOpenPopup={setExpensesPopup}
+                title = 'Add Expense'>
+                    <RecordForm type='expense' />
+              </Popup>
+              <Button onClick={() => setExpensesPopup(true)} startIcon={<RemoveIcon />}>Add Expense</Button>
+            </ButtonGroup>
+
             <Typography variant='h2' component='div' className='top-40 bottom-40'>
-              Select the Month
+              Select The Month
             </Typography>
 
             <Grid container>
-              <Grid item>
+              <Grid item xs={12} sm={6} md={4} xl={3}>
                 <January />
               </Grid>
-              <Grid item>
+              <Grid item xs={12} sm={6} md={4} xl={3}>
                 <February />
               </Grid>
-              <Grid item>
-                
+              <Grid item xs={12} sm={6} md={4} xl={3}>
+                <March />
               </Grid>
-              <Grid item>
-                
+              <Grid item xs={12} sm={6} md={4} xl={3}>
+                <April />
               </Grid>
-              <Grid item>
-                
+              <Grid item xs={12} sm={6} md={4} xl={3}>
+                <May />
               </Grid>
-              <Grid item>
-                
+              <Grid item xs={12} sm={6} md={4} xl={3}>
+                <June />
               </Grid>
-              <Grid item>
-                
+              <Grid item xs={12} sm={6} md={4} xl={3}>
+                <July />
               </Grid>
-              <Grid item>
-                
+              <Grid item xs={12} sm={6} md={4} xl={3}>
+                <August />
               </Grid>
-              <Grid item>
-                
+              <Grid item xs={12} sm={6} md={4} xl={3}>
+                <September />
               </Grid>
-              <Grid item>
-                
+              <Grid item xs={12} sm={6} md={4} xl={3}>
+                <October />
               </Grid>
-              <Grid item>
-                
+              <Grid item xs={12} sm={6} md={4} xl={3}>
+                <November />
               </Grid>
-              <Grid item>
-                
+              <Grid item xs={12} sm={6} md={4} xl={3}>
+                <December />
               </Grid>
             </Grid>
             
-            <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+            {/* <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                 <AccordionSummary 
                 aria-controls="panel1d-content" 
                 id="panel1d-header" 
@@ -283,7 +304,7 @@ const Home = () => {
                 Discard
               </Button>
             </ButtonGroup>
-            <img src={logo} className="App-logo" alt="logo" />
+            <img src={logo} className="App-logo" alt="logo" /> */}
           </header>
         </div>
       </ThemeProvider>
