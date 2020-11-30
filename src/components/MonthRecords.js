@@ -1,4 +1,4 @@
-port React from 'react';
+import React from 'react';
 
 var janIncome = 0;
 var janExpenses = 0;
