@@ -1,7 +1,7 @@
 import React from 'react';
 
-var janIncome = 0;
-var janExpenses = 0;
+var januaryIncome = 0;
+var januaryExpenses = 0;
 var februaryIncome = 0;
 var februaryExpenses = 0;
 var marchIncome = 0;
@@ -33,62 +33,78 @@ export default function MonthRecords(props) {
 
     const records = JSON.parse(localStorage.getItem('records'))
 
-    records.forEach(item => {
-        if (item.month == '1') {
-            janIncome += Number(item.income);
-            janExpenses += Number(item.expense);           
-        } else if (item.month == '2') {
-            februaryIncome += Number(item.income);
-            februaryExpenses += Number(item.expense);
-        } else if (item.month == '3') {
-            marchIncome += Number(item.income);
-            marchExpenses += Number(item.expense);
-        } else if (item.month == '4') {
-            aprilIncome += Number(item.income);
-            aprilExpenses += Number(item.expense);
-        } else if (item.month == '5') {
-            mayIncome += Number(item.income);
-            mayExpenses += Number(item.expense);
-        } else if (item.month == '6') {
-            juneIncome += Number(item.income);
-            juneExpenses += Number(item.expense);
-        } else if (item.month == '7') {
-            julyIncome += Number(item.income);
-            julyExpenses += Number(item.expense);
-        } else if (item.month == '8') {
-            augustIncome += Number(item.income);
-            augustExpenses += Number(item.expense);
-        } else if (item.month = '9') {
-            septemberIncome += Number(item.income);
-            septemberExpenses += Number(item.expense);
-        } else if (item.month = '10') {
-            octoberIncome += Number(item.income);
-            octoberExpenses += Number(item.expense);
-        } else if (item.month = '11') {
-            novemberIncome += Number(item.income);
-            novemberExpenses += Number(item.expense);
-        } else if (item.month = '12') {
-            decemberIncome += Number(item.income);
-            decemberExpenses += Number(item.expense);
-        }
-    });
-
-    var januaryBalance = janIncome - janExpenses
-    var februaryBalance = februaryIncome - februaryExpenses
-    var marchBalance = marchIncome - marchExpenses
-    var aprilBalance = aprilIncome - aprilExpenses
-    var mayBalance = mayIncome - mayExpenses
-    var juneBalance = juneIncome - juneExpenses
-    var julyBalance = julyIncome - julyExpenses
-    var augustBalance = augustIncome - augustExpenses
-    var septemberBalance = septemberIncome - septemberExpenses
-    var octoberBalance = octoberIncome - octoberExpenses
-    var novemberBalance = novemberIncome - novemberExpenses
-    var decemberBalance = decemberIncome - decemberExpenses
+    // records.forEach(item => {
+    //     if (item.month == '1') {
+    //         janIncome += Number(item.income);
+    //         janExpenses += Number(item.expense);           
+    //     } else if (item.month == '2') {
+    //         februaryIncome += Number(item.income);
+    //         februaryExpenses += Number(item.expense);
+    //     } else if (item.month == '3') {
+    //         marchIncome += Number(item.income);
+    //         marchExpenses += Number(item.expense);
+    //     } else if (item.month == '4') {
+    //         aprilIncome += Number(item.income);
+    //         aprilExpenses += Number(item.expense);
+    //     } else if (item.month == '5') {
+    //         mayIncome += Number(item.income);
+    //         mayExpenses += Number(item.expense);
+    //     } else if (item.month == '6') {
+    //         juneIncome += Number(item.income);
+    //         juneExpenses += Number(item.expense);
+    //     } else if (item.month == '7') {
+    //         julyIncome += Number(item.income);
+    //         julyExpenses += Number(item.expense);
+    //     } else if (item.month == '8') {
+    //         augustIncome += Number(item.income);
+    //         augustExpenses += Number(item.expense);
+    //     } else if (item.month = '9') {
+    //         septemberIncome += Number(item.income);
+    //         septemberExpenses += Number(item.expense);
+    //     } else if (item.month = '10') {
+    //         octoberIncome += Number(item.income);
+    //         octoberExpenses += Number(item.expense);
+    //     } else if (item.month = '11') {
+    //         novemberIncome += Number(item.income);
+    //         novemberExpenses += Number(item.expense);
+    //     } else if (item.month = '12') {
+    //         decemberIncome += Number(item.income);
+    //         decemberExpenses += Number(item.expense);
+    //     }
+    // });
 
     if (type == 'income') {
+
+        records.forEach(item => {
+            if (item.month == '1') {
+                januaryIncome += Number(item.income);           
+            } else if (item.month == '2') {
+                februaryIncome += Number(item.income);
+            } else if (item.month == '3') {
+                marchIncome += Number(item.income);
+            } else if (item.month == '4') {
+                aprilIncome += Number(item.income);
+            } else if (item.month == '5') {
+                mayIncome += Number(item.income);
+            } else if (item.month == '6') {
+                juneIncome += Number(item.income);
+            } else if (item.month == '7') {
+                julyIncome += Number(item.income);
+            } else if (item.month == '8') {
+                augustIncome += Number(item.income);
+            } else if (item.month = '9') {
+                septemberIncome += Number(item.income);
+            } else if (item.month = '10') {
+                octoberIncome += Number(item.income);
+            } else if (item.month = '11') {
+                novemberIncome += Number(item.income);
+            } else if (item.month = '12') {
+                decemberIncome += Number(item.income);
+            }
+        });
+
         if (month == 'January') {
-            return <div className='align-right'>{janIncome}€</div>
+            return <div className='align-right'>{januaryIncome}€</div>
         } else if (month == 'February') {
             return <div className='align-right'>{februaryIncome}€</div>
         } else if (month == 'March') {
@@ -113,8 +129,37 @@ export default function MonthRecords(props) {
             return <div className='align-right'>{decemberIncome}€</div>
         }
     } else if (type == 'expenses') {
+
+        records.forEach(item => {
+            if (item.month == '1') {
+                januaryExpenses += Number(item.expense);           
+            } else if (item.month == '2') {
+                februaryExpenses += Number(item.expense);
+            } else if (item.month == '3') {
+                marchExpenses += Number(item.expense);
+            } else if (item.month == '4') {
+                aprilExpenses += Number(item.expense);
+            } else if (item.month == '5') {
+                mayExpenses += Number(item.expense);
+            } else if (item.month == '6') {
+                juneExpenses += Number(item.expense);
+            } else if (item.month == '7') {
+                julyExpenses += Number(item.expense);
+            } else if (item.month == '8') {
+                augustExpenses += Number(item.expense);
+            } else if (item.month = '9') {
+                septemberExpenses += Number(item.expense);
+            } else if (item.month = '10') {
+                octoberExpenses += Number(item.expense);
+            } else if (item.month = '11') {
+                novemberExpenses += Number(item.expense);
+            } else if (item.month = '12') {
+                decemberExpenses += Number(item.expense);
+            }
+        });
+
         if (month == 'January') {
-            return <div className='align-right'>{janExpenses}€</div>
+            return <div className='align-right'>{januaryExpenses}€</div>
         } else if (month == 'February') {
             return <div className='align-right'>{februaryExpenses}€</div>
         } else if (month == 'March') {
@@ -139,6 +184,20 @@ export default function MonthRecords(props) {
             return <div className='align-right'>{decemberExpenses}€</div>
         }
     } else if (type == 'balance') {
+
+        var januaryBalance = januaryIncome - januaryExpenses
+        var februaryBalance = februaryIncome - februaryExpenses
+        var marchBalance = marchIncome - marchExpenses
+        var aprilBalance = aprilIncome - aprilExpenses
+        var mayBalance = mayIncome - mayExpenses
+        var juneBalance = juneIncome - juneExpenses
+        var julyBalance = julyIncome - julyExpenses
+        var augustBalance = augustIncome - augustExpenses
+        var septemberBalance = septemberIncome - septemberExpenses
+        var octoberBalance = octoberIncome - octoberExpenses
+        var novemberBalance = novemberIncome - novemberExpenses
+        var decemberBalance = decemberIncome - decemberExpenses
+
         if (month == 'January') {
             return <div className='align-right'>{januaryBalance}€</div>
         } else if (month == 'February') {
