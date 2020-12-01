@@ -56,11 +56,22 @@
 
 .align-right {
   text-align: right !important;
+  margin-right: auto;
+}
+
+.align-container {
+  position: relative;
+  height: 200px;
 }
 
 .align-vertically {
-  display: absolute;;
-  top: 50%;
-  bottom: 50%;
-  transform: 'translate(-50%, -50%)';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+}
+
+.width100 {
+  width: 100%;
 }

@@ -127,7 +127,7 @@ const Home = () => {
     return (
         <ThemeProvider theme={theme}>
         <div className="App">
-          <body className="Body">
+          <div className="Body">
 
           <Typography variant='h2' component='div' className='top-40 bottom-40'>
               Add Income/Expense
@@ -295,7 +295,7 @@ const Home = () => {
             <CheckboxExample />
 
             <img src={logo} className="App-logo" alt="logo" />
-          </body>
+          </div>
         </div>
       </ThemeProvider>
     )

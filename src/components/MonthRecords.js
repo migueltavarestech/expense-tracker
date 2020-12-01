@@ -104,7 +104,7 @@ export default function MonthRecords(props) {
         });
 
         if (month == 'January') {
-            return <div className='align-right'>{januaryIncome}€</div>
+            return <span>{januaryIncome}€</span>
         } else if (month == 'February') {
             return <div className='align-right'>{februaryIncome}€</div>
         } else if (month == 'March') {
@@ -159,7 +159,7 @@ export default function MonthRecords(props) {
         });
 
         if (month == 'January') {
-            return <div className='align-right'>{januaryExpenses}€</div>
+            return <span style={{textAlign: 'right'}}>{januaryExpenses}€</span>
         } else if (month == 'February') {
             return <div className='align-right'>{februaryExpenses}€</div>
         } else if (month == 'March') {
@@ -199,7 +199,7 @@ export default function MonthRecords(props) {
         var decemberBalance = decemberIncome - decemberExpenses
 
         if (month == 'January') {
-            return <div className='align-right'>{januaryBalance}€</div>
+            return <span>{januaryBalance}€</span>
         } else if (month == 'February') {
             return <div className='align-right'>{februaryBalance}€</div>
         } else if (month == 'March') {

@@ -30,32 +30,60 @@ const January = () => {
     
         <ThemeProvider theme={theme}>
         <div className="App">
-          <body className="Body">
+          <div className="Body">
               <CustomPaper variant='outlined'>
 
                   <Grid container>
-                    <Grid item xs={6}>
+                    
+                    <Grid item xs={12} md={6}>
+                                <div className='align-vertically'>
+                                    <div className='width100'>
+                                        <Grid container>
+                                            <Grid item xs={3}></Grid>
+                                            <Grid item xs={3}>
+                                                <span>Income</span>
+                                            </Grid>
+                                            <Grid item xs={3}>
+                                                <MonthRecords month='January' type='income' />
+                                            </Grid>
+                                            <Grid item xs={3}></Grid>
+                                        </Grid>
+                                    </div>
 
-                        <Grid container spacing={2} justify='center'>
-                            <Grid item>
-                                <div className='align-left'>Income</div>
-                                <div className='align-left'>Expenses</div>
-                                <div className='align-left'>Balance</div>
-                            </Grid>
-                            <Grid item>
-                                <MonthRecords month='January' type='income' />
-                                <MonthRecords month='January' type='expenses' />
-                                <MonthRecords month='January' type='balance' />
-                            </Grid>
-                        </Grid>
+                                    <div className='width100'>
+                                        <Grid container>
+                                            <Grid item xs={3}></Grid>
+                                            <Grid item xs={3}>
+                                                <span>Expenses</span>
+                                            </Grid>
+                                            <Grid item xs={3}>
+                                                <MonthRecords month='January' type='expenses' />
+                                            </Grid>
+                                            <Grid item xs={3}></Grid>
+                                        </Grid>
+                                    </div>
 
+                                    <div className='width100'>
+                                        <Grid container>
+                                            <Grid item xs={3}></Grid>
+                                            <Grid item xs={3}>
+                                                <span>Balance</span>
+                                            </Grid>
+                                            <Grid item xs={3}>
+                                                <MonthRecords month='January' type='balance' />
+                                            </Grid>
+                                            <Grid item xs={3}></Grid>
+                                        </Grid>
+                                    </div>
+                                </div>
                     </Grid>
-                    <Grid item xs={6}>
+                    
+                    <Grid item sm={12} md={6}>
                         <Grid container spacing={2}>
-                            <Grid item xs={6}>
+                            <Grid item xs={12} sm={6}>
                                 <JanuaryPie />
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item xs={12} sm={6}>
                                 <JanuaryPie />
                             </Grid>                       
                         </Grid>
@@ -63,7 +91,7 @@ const January = () => {
                   </Grid>
                   
               </CustomPaper>
-          </body>
+          </div>
         </div>
       </ThemeProvider>
 
