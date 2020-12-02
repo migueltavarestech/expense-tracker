@@ -18,26 +18,24 @@ var januaryOthers = 0;
 
 export function JanuaryCategories() {
     records.forEach(item => {
-        if (item.category == 'Rent') {
+        if ((item.category == 'Rent') && (item.month == '1')) {
             januaryRent += Number(item.expense);
-        } else if (item.category == 'Bills') {
+        } else if ((item.category == 'Bills') && (item.month == '1')) {
             januaryBills += Number(item.expense);
-        } else if (item.category == 'Groceries') {
+        } else if ((item.category == 'Groceries') && (item.month == '1')) {
             januaryGroceries += Number(item.expense);
-        } else if (item.category == 'Holidays') {
+        } else if ((item.category == 'Holidays') && (item.month == '1')) {
             januaryHolidays += Number(item.expense);
-        } else if (item.category == 'Clothes') {
+        } else if ((item.category == 'Clothes') && (item.month == '1')) {
             januaryClothes += Number(item.expense);
-        } else if (item.category == 'Entertainment') {
+        } else if ((item.category == 'Entertainment') && (item.month == '1')) {
             januaryEntertainment += Number(item.expense);
-        } else if (item.category == 'Car Costs') {
+        } else if ((item.category == 'Car Costs') && (item.month == '1')) {
             januaryCarCosts += Number(item.expense);
-        } else if (item.category == 'Others') {
+        } else if ((item.category == 'Others') && (item.month == '1')) {
             januaryOthers += Number(item.expense);
         }
     });
-
-    console.log(januaryRent);
     
     const data = {
         dataPie: {
