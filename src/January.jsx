@@ -7,6 +7,7 @@ import TotalBalance from './components/TotalBalance';
 import { January as JanuaryPie } from './components/PieChart';
 import MonthRecords from './components/MonthRecords';
 import { JanuaryCategories } from './components/MonthChart';
+import DataTable from './components/DataTable'
 
 const theme = createMuiTheme({
     typography: {
@@ -17,12 +18,21 @@ const theme = createMuiTheme({
     }
 })
 
-const CustomPaper = withStyles({
+const FirstPaper = withStyles({
     root: {
       border: '1px solid rgba(0, 0, 0, .125)',
       width: '95%',
-      position: 'absolute',
-      top: '100px'
+      marginTop: '20px'
+    //   position: 'absolute',
+    //   top: '100px'
+    }
+})(Paper);
+
+const SecondPaper = withStyles({
+    root: {
+      border: '1px solid rgba(0, 0, 0, .125)',
+      width: '95%',
+      marginTop: '20px',
     }
 })(Paper);
 
@@ -32,7 +42,7 @@ const January = () => {
         <ThemeProvider theme={theme}>
         <div className="App">
           <div className="Body">
-              <CustomPaper variant='outlined'>
+              <FirstPaper variant='outlined'>
 
                   <Grid container>
                     
@@ -88,7 +98,12 @@ const January = () => {
                     </Grid>
                   </Grid>
                   
-              </CustomPaper>
+              </FirstPaper>
+
+              <SecondPaper>
+                  <DataTable />
+              </SecondPaper>
+
           </div>
         </div>
       </ThemeProvider>
