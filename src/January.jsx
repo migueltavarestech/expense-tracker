@@ -91,16 +91,18 @@ const January = () => {
                                 </div>
                     </Grid>
                     
-                    <Grid item sm={12} md={6}>
-                            <Grid item xs={12}>
-                                <JanuaryCategories />
-                            </Grid>                       
+                    <Grid container item sm={12} md={6}>
+                        <Grid xs={12} item justify='center'>
+                            <div>
+                                <JanuaryCategories />  
+                            </div> 
+                        </Grid>                
                     </Grid>
                   </Grid>
                   
               </FirstPaper>
 
-              <SecondPaper>
+              <SecondPaper style={{marginBottom: '20px'}}>
                   <DataTable />
               </SecondPaper>
 
