@@ -9,6 +9,7 @@ const initialFValues = {
     expense: '',
     description: '',
     month: '',
+    category: '',
     date: new Date()
 };
 
@@ -27,10 +28,28 @@ const months = [
     {id: '12', title: 'December'}
 ];
 
+const incomeCategories = [
+    {id: 'Rent', title: 'Rent'}, 
+    {id: 'Bills', title: 'Bills'}, 
+    {id: 'Groceries', title: 'Groceries'}, 
+    {id: 'Holidays', title: 'Holidays'}, 
+    {id: 'Clothes', title: 'Clothes'}, 
+    {id: 'Entertainment', title: 'Entertainment'}, 
+    {id: 'Car Costs', title: 'Car Costs'}, 
+    {id: 'Others', title: 'Others'}
+];
+
+const expensesCategories = [
+    {id: 'Salary', title: 'Salary'}, 
+    {id: 'Bonus', title: 'Bonus'}, 
+    {id: 'Loan', title: 'Loan'}, 
+    {id: 'Others', title: 'Others'}
+];
+
 const KEYS = {
     records: 'records',
     recordId: 'recordId'
-}
+};
 
 
 
@@ -74,7 +93,8 @@ export default function RecordForm(props) {
             if('month' in fieldValues)
                 temp.month = fieldValues.month?'':'This field is required.'        
         }
-
+        
+        temp.category = fieldValues.category?'':'This field is required.'
         setErrors({
             ...temp
         })
@@ -135,6 +155,15 @@ export default function RecordForm(props) {
                         error={errors.month}/>
                     </Grid>
                     <Grid item xs={12}>
+                        <Controls.Select 
+                        name='category'
+                        label='Category'
+                        value={values.category}
+                        onChange={handleInputChange}
+                        options={expensesCategories}
+                        error={errors.category}/>
+                    </Grid>
+                    <Grid item xs={12}>
                         <Controls.DatePicker 
                         name='date'
                         label='Date'
@@ -177,6 +206,15 @@ export default function RecordForm(props) {
                         onChange={handleInputChange}
                         options={months}
                         error={errors.month}/>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Controls.Select 
+                        name='category'
+                        label='Category'
+                        value={values.category}
+                        onChange={handleInputChange}
+                        options={incomeCategories}
+                        error={errors.category}/>
                     </Grid>
                     <Grid item xs={12}>
                         <Controls.DatePicker 

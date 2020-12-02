@@ -49,10 +49,6 @@ export function January() {
             backgroundColor: [
                 "#F7464A",
                 "#46BFBD"
-            ],
-            hoverBackgroundColor: [
-                "#FF5A5E",
-                "#5AD3D1"
             ]
             }
         ]
