@@ -5,7 +5,7 @@ if (localStorage.getItem('records') == null)
         localStorage.setItem('records', JSON.stringify([]))
 
 const records = JSON.parse(localStorage.getItem('records'))
-const data = records
+const data = records.filter(record => record.month === '1');
 const columns = [
     {name: 'income', label: 'Income'},
     {name: 'expense', label: 'Expense'},
@@ -18,7 +18,6 @@ const options = {
 };
 
 export default function DataTable() {
-    console.log(records);
 
     return (
         <MUIDataTable 
