@@ -18,21 +18,21 @@ var januaryOthers = 0;
 
 export function JanuaryCategories() {
     records.forEach(item => {
-        if ((item.category == 'Rent') && (item.month == '1')) {
+        if ((item.category == 'Rent') && (item.month == 'January')) {
             januaryRent += Number(item.expense);
-        } else if ((item.category == 'Bills') && (item.month == '1')) {
+        } else if ((item.category == 'Bills') && (item.month == 'January')) {
             januaryBills += Number(item.expense);
-        } else if ((item.category == 'Groceries') && (item.month == '1')) {
+        } else if ((item.category == 'Groceries') && (item.month == 'January')) {
             januaryGroceries += Number(item.expense);
-        } else if ((item.category == 'Holidays') && (item.month == '1')) {
+        } else if ((item.category == 'Holidays') && (item.month == 'January')) {
             januaryHolidays += Number(item.expense);
-        } else if ((item.category == 'Clothes') && (item.month == '1')) {
+        } else if ((item.category == 'Clothes') && (item.month == 'January')) {
             januaryClothes += Number(item.expense);
-        } else if ((item.category == 'Entertainment') && (item.month == '1')) {
+        } else if ((item.category == 'Entertainment') && (item.month == 'January')) {
             januaryEntertainment += Number(item.expense);
-        } else if ((item.category == 'Car Costs') && (item.month == '1')) {
+        } else if ((item.category == 'Car Costs') && (item.month == 'January')) {
             januaryCarCosts += Number(item.expense);
-        } else if ((item.category == 'Others') && (item.month == '1')) {
+        } else if ((item.category == 'Others') && (item.month == 'January')) {
             januaryOthers += Number(item.expense);
         }
     });

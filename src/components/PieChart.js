@@ -34,7 +34,7 @@ var decemberExpenses = 0;
 
 export function January() {
     records.forEach(item => {
-        if (item.month == '1') {
+        if (item.month == 'January') {
             januaryIncome += Number(item.income);
             januaryExpenses += Number(item.expense);
         }
@@ -65,7 +65,7 @@ export function January() {
 
 export function February() {
     records.forEach(item => {
-        if (item.month == '2') {
+        if (item.month == 'February') {
             februaryIncome += Number(item.income);
             februaryExpenses += Number(item.expense);
         }
@@ -100,7 +100,7 @@ export function February() {
 
 export function March() {
     records.forEach(item => {
-        if (item.month == '3') {
+        if (item.month == 'March') {
             marchIncome += Number(item.income);
             marchExpenses += Number(item.expense);
         }
@@ -135,7 +135,7 @@ export function March() {
 
 export function April() {
     records.forEach(item => {
-        if (item.month == '4') {
+        if (item.month == 'April') {
             aprilIncome += Number(item.income);
             aprilExpenses += Number(item.expense);
         }
@@ -170,7 +170,7 @@ export function April() {
 
 export function May() {
     records.forEach(item => {
-        if (item.month == '5') {
+        if (item.month == 'May') {
             mayIncome += Number(item.income);
             mayExpenses += Number(item.expense);
         }
@@ -205,7 +205,7 @@ export function May() {
 
 export function June() {
     records.forEach(item => {
-        if (item.month == '6') {
+        if (item.month == 'June') {
             juneIncome += Number(item.income);
             juneExpenses += Number(item.expense);
         }
@@ -240,7 +240,7 @@ export function June() {
 
 export function July() {
     records.forEach(item => {
-        if (item.month == '7') {
+        if (item.month == 'July') {
             julyIncome += Number(item.income);
             julyExpenses += Number(item.expense);
         }
@@ -275,7 +275,7 @@ export function July() {
 
 export function August() {
     records.forEach(item => {
-        if (item.month == '8') {
+        if (item.month == 'August') {
             augustIncome += Number(item.income);
             augustExpenses += Number(item.expense);
         }
@@ -310,7 +310,7 @@ export function August() {
 
 export function September() {
     records.forEach(item => {
-        if (item.month == '9') {
+        if (item.month == 'September') {
             septemberIncome += Number(item.income);
             septemberExpenses += Number(item.expense);
         }
@@ -345,7 +345,7 @@ export function September() {
 
 export function October() {
     records.forEach(item => {
-        if (item.month == '10') {
+        if (item.month == 'October') {
             octoberIncome += Number(item.income);
             octoberExpenses += Number(item.expense);
         }
@@ -380,7 +380,7 @@ export function October() {
 
 export function November() {
     records.forEach(item => {
-        if (item.month == '11') {
+        if (item.month == 'November') {
             novemberIncome += Number(item.income);
             novemberExpenses += Number(item.expense);
         }
@@ -415,7 +415,7 @@ export function November() {
 
 export function December() {
     records.forEach(item => {
-        if (item.month == '12') {
+        if (item.month == 'December') {
             decemberIncome += Number(item.income);
             decemberExpenses += Number(item.expense);
         }

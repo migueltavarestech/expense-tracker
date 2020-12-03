@@ -76,29 +76,29 @@ export default function MonthRecords(props) {
     if (type == 'income') {
 
         records.forEach(item => {
-            if (item.month == '1') {
+            if (item.month == 'January') {
                 januaryIncome += Number(item.income);           
-            } else if (item.month == '2') {
+            } else if (item.month == 'February') {
                 februaryIncome += Number(item.income);
-            } else if (item.month == '3') {
+            } else if (item.month == 'March') {
                 marchIncome += Number(item.income);
-            } else if (item.month == '4') {
+            } else if (item.month == 'April') {
                 aprilIncome += Number(item.income);
-            } else if (item.month == '5') {
+            } else if (item.month == 'May') {
                 mayIncome += Number(item.income);
-            } else if (item.month == '6') {
+            } else if (item.month == 'June') {
                 juneIncome += Number(item.income);
-            } else if (item.month == '7') {
+            } else if (item.month == 'July') {
                 julyIncome += Number(item.income);
-            } else if (item.month == '8') {
+            } else if (item.month == 'August') {
                 augustIncome += Number(item.income);
-            } else if (item.month = '9') {
+            } else if (item.month = 'September') {
                 septemberIncome += Number(item.income);
-            } else if (item.month = '10') {
+            } else if (item.month = 'October') {
                 octoberIncome += Number(item.income);
-            } else if (item.month = '11') {
+            } else if (item.month = 'November') {
                 novemberIncome += Number(item.income);
-            } else if (item.month = '12') {
+            } else if (item.month = 'December') {
                 decemberIncome += Number(item.income);
             }
         });
@@ -131,29 +131,29 @@ export default function MonthRecords(props) {
     } else if (type == 'expenses') {
 
         records.forEach(item => {
-            if (item.month == '1') {
+            if (item.month == 'January') {
                 januaryExpenses += Number(item.expense);           
-            } else if (item.month == '2') {
+            } else if (item.month == 'February') {
                 februaryExpenses += Number(item.expense);
-            } else if (item.month == '3') {
+            } else if (item.month == 'March') {
                 marchExpenses += Number(item.expense);
-            } else if (item.month == '4') {
+            } else if (item.month == 'April') {
                 aprilExpenses += Number(item.expense);
-            } else if (item.month == '5') {
+            } else if (item.month == 'May') {
                 mayExpenses += Number(item.expense);
-            } else if (item.month == '6') {
+            } else if (item.month == 'June') {
                 juneExpenses += Number(item.expense);
-            } else if (item.month == '7') {
+            } else if (item.month == 'July') {
                 julyExpenses += Number(item.expense);
-            } else if (item.month == '8') {
+            } else if (item.month == 'August') {
                 augustExpenses += Number(item.expense);
-            } else if (item.month = '9') {
+            } else if (item.month = 'September') {
                 septemberExpenses += Number(item.expense);
-            } else if (item.month = '10') {
+            } else if (item.month = 'October') {
                 octoberExpenses += Number(item.expense);
-            } else if (item.month = '11') {
+            } else if (item.month = 'November') {
                 novemberExpenses += Number(item.expense);
-            } else if (item.month = '12') {
+            } else if (item.month = 'December') {
                 decemberExpenses += Number(item.expense);
             }
         });

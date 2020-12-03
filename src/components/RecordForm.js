@@ -14,18 +14,18 @@ const initialFValues = {
 };
 
 const months = [
-    {id: '1', title: 'January'},
-    {id: '2', title: 'February'},
-    {id: '3', title: 'March'},
-    {id: '4', title: 'April'},
-    {id: '5', title: 'May'},
-    {id: '6', title: 'June'},
-    {id: '7', title: 'July'},
-    {id: '8', title: 'August'},
-    {id: '9', title: 'September'},
-    {id: '10', title: 'October'},
-    {id: '11', title: 'November'},
-    {id: '12', title: 'December'}
+    {id: 'January', title: 'January'},
+    {id: 'February', title: 'February'},
+    {id: 'March', title: 'March'},
+    {id: 'April', title: 'April'},
+    {id: 'May', title: 'May'},
+    {id: 'June', title: 'June'},
+    {id: 'July', title: 'July'},
+    {id: 'August', title: 'August'},
+    {id: 'September', title: 'September'},
+    {id: 'October', title: 'October'},
+    {id: 'November', title: 'November'},
+    {id: 'December', title: 'December'}
 ];
 
 const incomeCategories = [

@@ -19,7 +19,7 @@ const options = {
 
 export function JanuaryTable() {
 
-    const data = records.filter(record => record.month === '1');
+    const data = records.filter(record => record.month === 'January');
 
     return (
         <MUIDataTable 
@@ -33,7 +33,7 @@ export function JanuaryTable() {
 
 export function FebruaryTable() {
 
-    const data = records.filter(record => record.month === '2');
+    const data = records.filter(record => record.month === 'February');
 
     return (
         <MUIDataTable 
