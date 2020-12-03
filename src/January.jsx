@@ -1,13 +1,18 @@
 import React from 'react';
 import { ThemeProvider, createMuiTheme, withStyles } from '@material-ui/core/styles'
-import { Paper, Grid } from '@material-ui/core'
+import { Paper, Grid, Button } from '@material-ui/core'
 import TotalIncome from './components/TotalIncome';
 import TotalExpenses from './components/TotalExpenses';
 import TotalBalance from './components/TotalBalance';
 import { January as JanuaryPie } from './components/PieChart';
 import MonthRecords from './components/MonthRecords';
 import { JanuaryCategories } from './components/MonthChart';
-import DataTable from './components/DataTable'
+import { JanuaryTable } from './components/DataTable';
+import { ButtonGroup } from '@material-ui/core';
+import Popup from './components/Popup';
+import RecordForm from './components/RecordForm';
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
 
 const theme = createMuiTheme({
     typography: {
@@ -37,11 +42,32 @@ const SecondPaper = withStyles({
 })(Paper);
 
 const January = () => {
+
+    const [openIncomePopup, setIncomePopup] = React.useState(false);
+    const [openExpensesPopup, setExpensesPopup] = React.useState(false);
+
     return (
     
         <ThemeProvider theme={theme}>
         <div className="App">
           <div className="Body">
+                <ButtonGroup variant='contained' color='primary' style={{marginTop: '20px'}}>
+                        <Popup 
+                        openPopup={openIncomePopup} 
+                        setOpenPopup={setIncomePopup}
+                        title = 'Add Income'>
+                            <RecordForm type='income' />
+                        </Popup>
+                    <Button onClick={() => setIncomePopup(true)} startIcon={<AddIcon />}>Add Income</Button>
+                        <Popup 
+                        openPopup={openExpensesPopup} 
+                        setOpenPopup={setExpensesPopup}
+                        title = 'Add Expense'>
+                            <RecordForm type='expense' />
+                        </Popup>
+                    <Button onClick={() => setExpensesPopup(true)} startIcon={<RemoveIcon />}>Add Expense</Button>
+                </ButtonGroup>
+
               <FirstPaper variant='outlined'>
 
                   <Grid container>
@@ -103,7 +129,7 @@ const January = () => {
               </FirstPaper>
 
               <SecondPaper style={{marginBottom: '20px'}}>
-                  <DataTable />
+                  <JanuaryTable />
               </SecondPaper>
 
           </div>

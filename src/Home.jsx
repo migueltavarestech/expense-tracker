@@ -107,19 +107,19 @@ root: {
 },
 }))(MuiAccordionDetails);
 
-const handleChange = expense => ({ target: {value} }) => {
-    this.setState({
-        form: {
-            ...this.state.form,
-            [expense]: value
-        }
-    })
-}
+// const handleChange = expense => ({ target: {value} }) => {
+//     this.setState({
+//         form: {
+//             ...this.state.form,
+//             [expense]: value
+//         }
+//     })
+// }
 
 const Home = () => {
     const [expanded, setExpanded] = React.useState('panel1');
-    const handleChange = (panel) => (event, newExpanded) => {
-        setExpanded(newExpanded ? panel : false);};
+    // const handleChange = (panel) => (event, newExpanded) => {
+    //     setExpanded(newExpanded ? panel : false);};
     const [openIncomePopup, setIncomePopup] = React.useState(false);
     const [openExpensesPopup, setExpensesPopup] = React.useState(false);
     
@@ -193,7 +193,7 @@ const Home = () => {
               </Grid>
             </Grid>
             
-            <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+            {/* <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                 <AccordionSummary 
                 aria-controls="panel1d-content" 
                 id="panel1d-header" 
@@ -294,7 +294,7 @@ const Home = () => {
   
             <CheckboxExample />
 
-            <img src={logo} className="App-logo" alt="logo" />
+            <img src={logo} className="App-logo" alt="logo" /> */}
           </div>
         </div>
       </ThemeProvider>
