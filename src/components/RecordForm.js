@@ -76,7 +76,7 @@ const getAllRecords = () => {
 
 export default function RecordForm(props) {
 
-    const { type } = props;
+    const { type, month } = props;
     
     
     const validate = (fieldValues = values) => {
@@ -158,7 +158,7 @@ export default function RecordForm(props) {
                         <Controls.Select 
                         name='month'
                         label='Month'
-                        value={values.month}
+                        value={month}
                         onChange={handleInputChange}
                         options={months}
                         error={errors.month}/>
@@ -211,7 +211,7 @@ export default function RecordForm(props) {
                         <Controls.Select 
                         name='month'
                         label='Month'
-                        value={values.month}
+                        value={month}
                         onChange={handleInputChange}
                         options={months}
                         error={errors.month}/>

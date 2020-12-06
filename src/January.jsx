@@ -56,14 +56,14 @@ const January = () => {
                         openPopup={openIncomePopup} 
                         setOpenPopup={setIncomePopup}
                         title = 'Add Income'>
-                            <RecordForm type='income' />
+                            <RecordForm type='income' month='January' />
                         </Popup>
                     <Button onClick={() => setIncomePopup(true)} startIcon={<AddIcon />}>Add Income</Button>
                         <Popup 
                         openPopup={openExpensesPopup} 
                         setOpenPopup={setExpensesPopup}
                         title = 'Add Expense'>
-                            <RecordForm type='expense' />
+                            <RecordForm type='expense' month='January' />
                         </Popup>
                     <Button onClick={() => setExpensesPopup(true)} startIcon={<RemoveIcon />}>Add Expense</Button>
                 </ButtonGroup>
