@@ -6,12 +6,17 @@ if (localStorage.getItem('records') == null)
 
 const records = JSON.parse(localStorage.getItem('records'))
 
+for ( let i=0; i<records.length; i++) {
+    records[i]['date'] = records[i]['date'].toString().substring(0, 10);
+}
+
 const columns = [
     {name: 'income', label: 'Income'},
     {name: 'expense', label: 'Expense'},
-    {name: 'description', label: 'Description'},
+    {name: 'category', label: 'Category'},
+    {name: 'date', label: 'Date'},
     {name: 'month', label: 'Month'},
-    {name: 'category', label: 'Category'}
+    {name: 'notes', label: 'Notes'},
 ];
 const options = {
   filterType: 'checkbox',

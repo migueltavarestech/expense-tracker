@@ -7,7 +7,7 @@ const initialFValues = {
     id: 0,
     income: '',
     expense: '',
-    description: '',
+    notes: '',
     month: '',
     category: '',
     date: new Date()
@@ -139,22 +139,6 @@ export default function RecordForm(props) {
                         error={errors.income}/>
                     </Grid>
                     <Grid item xs={12}>
-                        <Controls.Input 
-                        name = 'description'
-                        label = 'Description'
-                        value={values.description}
-                        onChange={handleInputChange}/>
-                    </Grid>
-                    <Grid item xs={12}>
-                        <Controls.Select 
-                        name='month'
-                        label='Month'
-                        value={values.month}
-                        onChange={handleInputChange}
-                        options={months}
-                        error={errors.month}/>
-                    </Grid>
-                    <Grid item xs={12}>
                         <Controls.Select 
                         name='category'
                         label='Category'
@@ -168,6 +152,22 @@ export default function RecordForm(props) {
                         name='date'
                         label='Date'
                         value={values.date}
+                        onChange={handleInputChange}/>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Controls.Select 
+                        name='month'
+                        label='Month'
+                        value={values.month}
+                        onChange={handleInputChange}
+                        options={months}
+                        error={errors.month}/>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Controls.Input 
+                        name = 'notes'
+                        label = 'Notes'
+                        value={values.notes}
                         onChange={handleInputChange}/>
                     </Grid>
                     <Grid container justify='flex-end' style={{marginTop: "15px"}}>
@@ -192,22 +192,6 @@ export default function RecordForm(props) {
                         error={errors.expense}/>
                     </Grid>
                     <Grid item xs={12}>
-                        <Controls.Input 
-                        name = 'description'
-                        label = 'Description'
-                        value={values.description}
-                        onChange={handleInputChange}/>
-                    </Grid>
-                    <Grid item xs={12}>
-                        <Controls.Select 
-                        name='month'
-                        label='Month'
-                        value={values.month}
-                        onChange={handleInputChange}
-                        options={months}
-                        error={errors.month}/>
-                    </Grid>
-                    <Grid item xs={12}>
                         <Controls.Select 
                         name='category'
                         label='Category'
@@ -221,6 +205,22 @@ export default function RecordForm(props) {
                         name='date'
                         label='Date'
                         value={values.date}
+                        onChange={handleInputChange}/>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Controls.Select 
+                        name='month'
+                        label='Month'
+                        value={values.month}
+                        onChange={handleInputChange}
+                        options={months}
+                        error={errors.month}/>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Controls.Input 
+                        name = 'notes'
+                        label = 'Notes'
+                        value={values.notes}
                         onChange={handleInputChange}/>
                     </Grid>
                     <Grid container justify='flex-end' style={{marginTop: "15px"}}>
