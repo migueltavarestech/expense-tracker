@@ -29,6 +29,42 @@ const Drawer = () => {
         {
             text: 'March',
             onClick: () => window.location.href = "./March"
+        },
+        {
+            text: 'April',
+            onClick: () => window.location.href = "./April"
+        },
+        {
+            text: 'May',
+            onClick: () => window.location.href = "./May"
+        },
+        {
+            text: 'June',
+            onClick: () => window.location.href = "./June"
+        },
+        {
+            text: 'July',
+            onClick: () => window.location.href = "./July"
+        },
+        {
+            text: 'August',
+            onClick: () => window.location.href = "./August"
+        },
+        {
+            text: 'September',
+            onClick: () => window.location.href = "./September"
+        },
+        {
+            text: 'October',
+            onClick: () => window.location.href = "./October"
+        },
+        {
+            text: 'November',
+            onClick: () => window.location.href = "./November"
+        },
+        {
+            text: 'December',
+            onClick: () => window.location.href = "./December"
         }
     ];
 

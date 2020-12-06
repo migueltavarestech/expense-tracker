@@ -137,9 +137,7 @@ const Home = () => {
     // const handleChange = (panel) => (event, newExpanded) => {
     //     setExpanded(newExpanded ? panel : false);};
     const [openIncomePopup, setIncomePopup] = React.useState(false);
-    const [openExpensesPopup, setExpensesPopup] = React.useState(false);
-    console.log(currentMonth);
-    
+    const [openExpensesPopup, setExpensesPopup] = React.useState(false);    
 
     return (
         <ThemeProvider theme={theme}>
