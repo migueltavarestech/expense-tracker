@@ -80,6 +80,22 @@ const Accordion = withStyles({
     },
     expanded: {},
 })(MuiAccordion);
+
+const currentDate = new Date();
+const month = new Array();
+month[0] = "January";
+month[1] = "February";
+month[2] = "March";
+month[3] = "April";
+month[4] = "May";
+month[5] = "June";
+month[6] = "July";
+month[7] = "August";
+month[8] = "September";
+month[9] = "October";
+month[10] = "November";
+month[11] = "December";
+const currentMonth = month[currentDate.getMonth()];
   
 const AccordionSummary = withStyles({
     root: {
@@ -122,6 +138,7 @@ const Home = () => {
     //     setExpanded(newExpanded ? panel : false);};
     const [openIncomePopup, setIncomePopup] = React.useState(false);
     const [openExpensesPopup, setExpensesPopup] = React.useState(false);
+    console.log(currentMonth);
     
 
     return (
@@ -138,14 +155,14 @@ const Home = () => {
                 openPopup={openIncomePopup} 
                 setOpenPopup={setIncomePopup}
                 title = 'Add Income'>
-                    <RecordForm type='income' />
+                    <RecordForm type='income' month={currentMonth}/>
               </Popup>
               <Button onClick={() => setIncomePopup(true)} startIcon={<AddIcon />}>Add Income</Button>
               <Popup 
                 openPopup={openExpensesPopup} 
                 setOpenPopup={setExpensesPopup}
                 title = 'Add Expense'>
-                    <RecordForm type='expense' />
+                    <RecordForm type='expense' month={currentMonth}/>
               </Popup>
               <Button onClick={() => setExpensesPopup(true)} startIcon={<RemoveIcon />}>Add Expense</Button>
             </ButtonGroup>
