@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from "react-router-dom"
+import { HashRouter, Route, Switch } from "react-router-dom"
 import Home from './Home'
 import Drawer from './Drawer'
 import January from './January'
@@ -20,7 +20,7 @@ export default function App() {
     <>
       
       
-      <BrowserRouter>
+      <HashRouter>
         <Drawer />
         <Switch>
           <Route exact path="/" render={props => <Home {...props} />} />
@@ -38,7 +38,7 @@ export default function App() {
           <Route path="/December" exact render={props => <December {...props} />} />
           <Route component={Home}/>
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }
