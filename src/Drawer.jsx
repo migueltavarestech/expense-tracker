@@ -77,7 +77,7 @@ const Drawer = () => {
                             <MenuIcon />
                         </IconButton>
                         <Typography variant='h6'>
-                            Expenses Tracker
+                            <a href='./'>Expenses Tracker</a>
                         </Typography>
                     </ToolBar>
                 </AppBar>
