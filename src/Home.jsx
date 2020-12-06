@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom'
 import logo from './logo.svg';
 import './App.css';
 import { ButtonGroup } from '@material-ui/core'
@@ -132,7 +133,8 @@ root: {
 //     })
 // }
 
-const Home = () => {
+const Home = props => {
+    const { history } = props;
     const [expanded, setExpanded] = React.useState('panel1');
     // const handleChange = (panel) => (event, newExpanded) => {
     //     setExpanded(newExpanded ? panel : false);};
@@ -167,40 +169,40 @@ const Home = () => {
 
             <Grid container>
               <Grid item xs={12} sm={6} md={4} xl={3}>
-                <a href='./January'><January /></a>
+                <a onClick={() => history.push('/January')}><January /></a>
               </Grid>
               <Grid item xs={12} sm={6} md={4} xl={3}>
-                <a href='./February'><February /></a>
+                <a onClick={() => history.push('/February')}><February /></a>
               </Grid>
               <Grid item xs={12} sm={6} md={4} xl={3}>
-                <a href='./March'><March /></a>
+                <a onClick={() => history.push('/March')}><March /></a>
               </Grid>
               <Grid item xs={12} sm={6} md={4} xl={3}>
-                <a href='./April'><April /></a>
+                <a onClick={() => history.push('/April')}><April /></a>
               </Grid>
               <Grid item xs={12} sm={6} md={4} xl={3}>
-                <a href='./May'><May /></a>
+                <a onClick={() => history.push('/May')}><May /></a>
               </Grid>
               <Grid item xs={12} sm={6} md={4} xl={3}>
-                <a href='./June'><June /></a>
+                <a onClick={() => history.push('/June')}><June /></a>
               </Grid>
               <Grid item xs={12} sm={6} md={4} xl={3}>
-                <a href='./July'><July /></a>
+                <a onClick={() => history.push('/July')}><July /></a>
               </Grid>
               <Grid item xs={12} sm={6} md={4} xl={3}>
-                <a href='./August'><August /></a>
+                <a onClick={() => history.push('/August')}><August /></a>
               </Grid>
               <Grid item xs={12} sm={6} md={4} xl={3}>
-                <a href='./September'><September /></a>
+                <a onClick={() => history.push('/September')}><September /></a>
               </Grid>
               <Grid item xs={12} sm={6} md={4} xl={3}>
-                <a href='./October'><October /></a>
+                <a onClick={() => history.push('/October')}><October /></a>
               </Grid>
               <Grid item xs={12} sm={6} md={4} xl={3}>
-                <a href='./November'><November /></a>
+                <a onClick={() => history.push('/November')}><November /></a>
               </Grid>
               <Grid item xs={12} sm={6} md={4} xl={3}>
-                <a href='./December'><December /></a>
+                <a onClick={() => history.push('/December')}><December /></a>
               </Grid>
             </Grid>
             
@@ -312,4 +314,4 @@ const Home = () => {
     )
 };
 
-export default Home;
+export default withRouter(Home);

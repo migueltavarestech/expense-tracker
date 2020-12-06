@@ -27,47 +27,47 @@ const Drawer = props => {
         },
         {
             text: 'February',
-            onClick: () => history.push("./February")
+            onClick: () => history.push("/February")
         },
         {
             text: 'March',
-            onClick: () => history.push("./March")
+            onClick: () => history.push("/March")
         },
         {
             text: 'April',
-            onClick: () => history.push("./April")
+            onClick: () => history.push("/April")
         },
         {
             text: 'May',
-            onClick: () => history.push("./May")
+            onClick: () => history.push("/May")
         },
         {
             text: 'June',
-            onClick: () => history.push("./June")
+            onClick: () => history.push("/June")
         },
         {
             text: 'July',
-            onClick: () => history.push("./July")
+            onClick: () => history.push("/July")
         },
         {
             text: 'August',
-            onClick: () => history.push("./August")
+            onClick: () => history.push("/August")
         },
         {
             text: 'September',
-            onClick: () => history.push("./September")
+            onClick: () => history.push("/September")
         },
         {
             text: 'October',
-            onClick: () => history.push("./October")
+            onClick: () => history.push("/October")
         },
         {
             text: 'November',
-            onClick: () => history.push("./November")
+            onClick: () => history.push("/November")
         },
         {
             text: 'December',
-            onClick: () => history.push("./December")
+            onClick: () => history.push("/December")
         }
     ];
 
