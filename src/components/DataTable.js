@@ -63,3 +63,129 @@ export function MarchTable() {
         />
     )
 }
+
+export function AprilTable() {
+
+    const data = records.filter(record => record.month === 'April');
+
+    return (
+        <MUIDataTable 
+            title={"Breakdown Table"} 
+            data={data} 
+            columns={columns} 
+            options={options} 
+        />
+    )
+}
+
+export function MayTable() {
+
+    const data = records.filter(record => record.month === 'May');
+
+    return (
+        <MUIDataTable 
+            title={"Breakdown Table"} 
+            data={data} 
+            columns={columns} 
+            options={options} 
+        />
+    )
+}
+
+export function JuneTable() {
+
+    const data = records.filter(record => record.month === 'June');
+
+    return (
+        <MUIDataTable 
+            title={"Breakdown Table"} 
+            data={data} 
+            columns={columns} 
+            options={options} 
+        />
+    )
+}
+
+export function JulyTable() {
+
+    const data = records.filter(record => record.month === 'July');
+
+    return (
+        <MUIDataTable 
+            title={"Breakdown Table"} 
+            data={data} 
+            columns={columns} 
+            options={options} 
+        />
+    )
+}
+
+export function AugustTable() {
+
+    const data = records.filter(record => record.month === 'August');
+
+    return (
+        <MUIDataTable 
+            title={"Breakdown Table"} 
+            data={data} 
+            columns={columns} 
+            options={options} 
+        />
+    )
+}
+
+export function SeptemberTable() {
+
+    const data = records.filter(record => record.month === 'September');
+
+    return (
+        <MUIDataTable 
+            title={"Breakdown Table"} 
+            data={data} 
+            columns={columns} 
+            options={options} 
+        />
+    )
+}
+
+export function OctoberTable() {
+
+    const data = records.filter(record => record.month === 'October');
+
+    return (
+        <MUIDataTable 
+            title={"Breakdown Table"} 
+            data={data} 
+            columns={columns} 
+            options={options} 
+        />
+    )
+}
+
+export function NovemberTable() {
+
+    const data = records.filter(record => record.month === 'November');
+
+    return (
+        <MUIDataTable 
+            title={"Breakdown Table"} 
+            data={data} 
+            columns={columns} 
+            options={options} 
+        />
+    )
+}
+
+export function DecemberTable() {
+
+    const data = records.filter(record => record.month === 'December');
+
+    return (
+        <MUIDataTable 
+            title={"Breakdown Table"} 
+            data={data} 
+            columns={columns} 
+            options={options} 
+        />
+    )
+}
