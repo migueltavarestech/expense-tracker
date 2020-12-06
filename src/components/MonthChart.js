@@ -25,6 +25,15 @@ var februaryEntertainment = 0;
 var februaryCarCosts = 0;
 var februaryOthers = 0;
 
+var marchRent = 0;
+var marchBills = 0;
+var marchGroceries = 0;
+var marchHolidays = 0;
+var marchClothes = 0;
+var marchEntertainment = 0;
+var marchCarCosts = 0;
+var marchOthers = 0;
+
 export function JanuaryCategories() {
     records.forEach(item => {
         if ((item.category == 'Rent') && (item.month == 'January')) {
@@ -101,6 +110,56 @@ export function FebruaryCategories() {
         datasets: [
             {
             data: [februaryRent, februaryBills, februaryGroceries, februaryHolidays, februaryClothes, februaryEntertainment, februaryCarCosts, februaryOthers],
+            backgroundColor: [
+                "#003f5c",
+                "#2f4b7c",
+                "#665191",
+                "#a05195",
+                "#d45087",
+                "#f95d6a",
+                "#ff7c43",
+                "#ffa600"
+            ]
+            }
+        ]
+        }
+    }
+
+    return (
+        <MDBContainer >
+            <Pie data={data.dataPie} options={{ responsive: true }}/>
+        </MDBContainer>
+    )
+};
+
+export function MarchCategories() {
+    records.forEach(item => {
+        if ((item.category == 'Rent') && (item.month == 'March')) {
+            marchRent += Number(item.expense);
+        } else if ((item.category == 'Bills') && (item.month == 'March')) {
+            marchBills += Number(item.expense);
+        } else if ((item.category == 'Groceries') && (item.month == 'March')) {
+            marchGroceries += Number(item.expense);
+        } else if ((item.category == 'Holidays') && (item.month == 'March')) {
+            marchHolidays += Number(item.expense);
+        } else if ((item.category == 'Clothes') && (item.month == 'March')) {
+            marchClothes += Number(item.expense);
+        } else if ((item.category == 'Entertainment') && (item.month == 'March')) {
+            marchEntertainment += Number(item.expense);
+        } else if ((item.category == 'Car Costs') && (item.month == 'March')) {
+            marchCarCosts += Number(item.expense);
+        } else if ((item.category == 'Others') && (item.month == 'March')) {
+            marchOthers += Number(item.expense);
+        }
+    });
+    
+    const data = {
+        dataPie: {
+        labels: ['Rent', 'Bills', 'Groceries', 'Holidays', 'Clothes', 'Entertainment', 'Car Costs', 'Others'],
+        datasets: [
+            {
+            data: [marchRent, marchBills, marchGroceries, marchHolidays, marchClothes, 
+                    marchEntertainment, marchCarCosts, marchOthers],
             backgroundColor: [
                 "#003f5c",
                 "#2f4b7c",

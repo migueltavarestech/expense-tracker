@@ -3,15 +3,7 @@ import { Grid } from '@material-ui/core';
 import { useForm, Form } from './useForm';
 import Controls from './controls/Controls';
 
-const initialFValues = {
-    id: 0,
-    income: '',
-    expense: '',
-    notes: '',
-    month: '',
-    category: '',
-    date: new Date()
-};
+
 
 const months = [
     {id: 'January', title: 'January'},
@@ -77,6 +69,15 @@ const getAllRecords = () => {
 export default function RecordForm(props) {
 
     const { type, month } = props;
+    const initialFValues = {
+        id: 0,
+        income: '',
+        expense: '',
+        notes: '',
+        month: month,
+        category: '',
+        date: new Date()
+    };
     
     
     const validate = (fieldValues = values) => {
@@ -85,13 +86,13 @@ export default function RecordForm(props) {
         if (type === 'income') {
             if('income' in fieldValues)
                 temp.income = fieldValues.income?'':'This field is required.'
-            if('month' in fieldValues)
-                temp.month = fieldValues.month?'':'This field is required.'
+            // if('month' in fieldValues)
+            //     temp.month = fieldValues.month?'':'This field is required.'
         } else {
             if('expense' in fieldValues)
                 temp.expense = fieldValues.expense?'':'This field is required.'
-            if('month' in fieldValues)
-                temp.month = fieldValues.month?'':'This field is required.'        
+            // if('month' in fieldValues)
+            //     temp.month = fieldValues.month?'':'This field is required.'        
         }
         
         temp.category = fieldValues.category?'':'This field is required.'
@@ -127,6 +128,7 @@ export default function RecordForm(props) {
     };
 
     if (type === 'income') {
+
         return (
             <Form onSubmit={handleSubmit}>
                 <Grid container>
@@ -158,7 +160,7 @@ export default function RecordForm(props) {
                         <Controls.Select 
                         name='month'
                         label='Month'
-                        value={month}
+                        value={values.month || month}
                         onChange={handleInputChange}
                         options={months}
                         error={errors.month}/>
@@ -211,7 +213,7 @@ export default function RecordForm(props) {
                         <Controls.Select 
                         name='month'
                         label='Month'
-                        value={month}
+                        value={values.month || month}
                         onChange={handleInputChange}
                         options={months}
                         error={errors.month}/>

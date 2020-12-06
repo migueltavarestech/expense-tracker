@@ -144,11 +144,7 @@ const Home = () => {
         <div className="App">
           <div className="Body">
 
-          <Typography variant='h2' component='div' className='top-40 bottom-40'>
-              Add Income/Expense
-            </Typography>
-
-            <ButtonGroup variant='contained' color='primary'>
+            <ButtonGroup variant='contained' color='primary' className='top-40'>
               <Popup 
                 openPopup={openIncomePopup} 
                 setOpenPopup={setIncomePopup}

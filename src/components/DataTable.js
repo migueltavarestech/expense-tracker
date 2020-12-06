@@ -49,3 +49,17 @@ export function FebruaryTable() {
         />
     )
 }
+
+export function MarchTable() {
+
+    const data = records.filter(record => record.month === 'March');
+
+    return (
+        <MUIDataTable 
+            title={"Breakdown Table"} 
+            data={data} 
+            columns={columns} 
+            options={options} 
+        />
+    )
+}
