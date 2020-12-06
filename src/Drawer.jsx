@@ -80,7 +80,7 @@ const Drawer = props => {
                             <MenuIcon />
                         </IconButton>
                         <Typography variant='h6'>
-                            <a href='./'>Expenses Tracker</a>
+                            <a onClick={() => history.push('/')}>Expenses Tracker</a>
                         </Typography>
                     </ToolBar>
                 </AppBar>
