@@ -18,23 +18,25 @@ import December from './December'
 export default function App() {
   return (
     <>
-      <Drawer />
+      
       
       <BrowserRouter>
+        <Drawer />
         <Switch>
-          <Route exact from="/" render={props => <Home {...props} />} />
-          <Route exact path="/January" render={props => <January {...props} />} />
-          <Route exact path="/February" render={props => <February {...props} />} />
-          <Route exact path="/March" render={props => <March {...props} />} />
-          <Route exact path="/April" render={props => <April {...props} />} />
-          <Route exact path="/May" render={props => <May {...props} />} />
-          <Route exact path="/June" render={props => <June {...props} />} />
-          <Route exact path="/July" render={props => <July {...props} />} />
-          <Route exact path="/August" render={props => <August {...props} />} />
-          <Route exact path="/September" render={props => <September {...props} />} />
-          <Route exact path="/October" render={props => <October {...props} />} />
-          <Route exact path="/November" render={props => <November {...props} />} />
-          <Route exact path="/December" render={props => <December {...props} />} />
+          <Route exact path="/" render={props => <Home {...props} />} />
+          <Route path="/January" exact render={props => <January {...props} />} />
+          <Route path="/February" exact render={props => <February {...props} />} />
+          <Route path="/March" exact render={props => <March {...props} />} />
+          <Route path="/April" exact render={props => <April {...props} />} />
+          <Route path="/May" exact render={props => <May {...props} />} />
+          <Route path="/June" exact render={props => <June {...props} />} />
+          <Route path="/July" exact render={props => <July {...props} />} />
+          <Route path="/August" exact render={props => <August {...props} />} />
+          <Route path="/September" exact render={props => <September {...props} />} />
+          <Route path="/October" exact render={props => <October {...props} />} />
+          <Route path="/November" exact render={props => <November {...props} />} />
+          <Route path="/December" exact render={props => <December {...props} />} />
+          <Route component={Home}/>
         </Switch>
       </BrowserRouter>
     </>

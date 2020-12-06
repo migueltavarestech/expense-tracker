@@ -5,8 +5,11 @@ import ToolBar from '@material-ui/core/ToolBar'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 import Typography from '@material-ui/core/Typography'
+import { withRouter } from 'react-router-dom'
 
-const Drawer = () => {
+const Drawer = props => {
+
+    const { history } = props;
 
     const[open, setOpen] = useState(false);
     const handleDrawer = () => {
@@ -16,55 +19,55 @@ const Drawer = () => {
     const itemsList = [
         {
             text: 'Home',
-            onClick: () => window.location.href = "./"
+            onClick: () => history.push('/')
         },
         {
             text: 'January',
-            onClick: () => window.location.href = "./January"
+            onClick: () => history.push('/January')
         },
         {
             text: 'February',
-            onClick: () => window.location.href = "./February"
+            onClick: () => history.push("./February")
         },
         {
             text: 'March',
-            onClick: () => window.location.href = "./March"
+            onClick: () => history.push("./March")
         },
         {
             text: 'April',
-            onClick: () => window.location.href = "./April"
+            onClick: () => history.push("./April")
         },
         {
             text: 'May',
-            onClick: () => window.location.href = "./May"
+            onClick: () => history.push("./May")
         },
         {
             text: 'June',
-            onClick: () => window.location.href = "./June"
+            onClick: () => history.push("./June")
         },
         {
             text: 'July',
-            onClick: () => window.location.href = "./July"
+            onClick: () => history.push("./July")
         },
         {
             text: 'August',
-            onClick: () => window.location.href = "./August"
+            onClick: () => history.push("./August")
         },
         {
             text: 'September',
-            onClick: () => window.location.href = "./September"
+            onClick: () => history.push("./September")
         },
         {
             text: 'October',
-            onClick: () => window.location.href = "./October"
+            onClick: () => history.push("./October")
         },
         {
             text: 'November',
-            onClick: () => window.location.href = "./November"
+            onClick: () => history.push("./November")
         },
         {
             text: 'December',
-            onClick: () => window.location.href = "./December"
+            onClick: () => history.push("./December")
         }
     ];
 
@@ -100,4 +103,4 @@ const Drawer = () => {
     );
 };
 
-export default Drawer;
+export default withRouter(Drawer);
