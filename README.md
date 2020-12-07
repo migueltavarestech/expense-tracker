@@ -1,9 +1,9 @@
 TECHNOLOGIES USED: JavaScript / React / Material-UI
 
 FUTURE ITERATIONS:
-General Technical Debt (& Bug Fixes)
-Feature to add extra Categories
-Usage of database instead of LocalStorage
+</br>-General Technical Debt (& Bug Fixes)
+</br>-Feature to add extra Categories
+</br>-Usage of database instead of LocalStorage
 
 PURPOSE:
 Build an app using these different technologies without referring to tutorials. You can add income or expense records, and that will be shown to you in a PieChart that shows income/expenses, another PieChart that shows the percentage of each Category, and in a Breakdown Table with the full data split by month, with the possibility to filter, sort and download as CSV.
